@@ -10,20 +10,21 @@ resources :employers do
 end
 
 
-resources :quizzes, except: [:index] do
+resources :quizzes, except: [:index, :show] do
   resources :questions, only: [:new, :create]
   resources :responses, only: [:index, :new, :create]
 end
 
 
 resources :listings, only: [:index,:show, :update, :edit, :delete] do
-  resources :applications, only: [:create]
+  resources :submissions, only: [:create]
 end
 
 resources :questions, only: [:edit, :update, :delete]
-resources :applications, only: [:delete]
-
-
+resources :submissions, only: [:delete]
+resources :submissions, only: [:show, :delete] do
+  resources :quizzes, only: [:show]
+end
 
 
 end

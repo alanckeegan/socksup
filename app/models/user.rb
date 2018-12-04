@@ -6,11 +6,11 @@ class User < ApplicationRecord
   has_many :submissions,  dependent: :destroy
 
 
-  validates :first, presence: true
-  validates :last, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
   validates :email, presence: true
   validates :email, uniqueness: true
-  validates :age, presence: true
-  validates :photo, presence: true
+  # validates :date_of_birth, presence: true
+  # validates :photo, presence: true
 
 end
