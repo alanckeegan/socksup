@@ -16,4 +16,11 @@
 
 body {
   background-color: $white;
+  margin: 0 0 100px;
+  min-height: 100%;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
 }
