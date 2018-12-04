@@ -22,6 +22,7 @@ end
 
 resources :questions, only: [:edit, :update, :delete]
 resources :submissions, only: [:delete]
+
 resources :submissions, only: [:show, :delete] do
   resource :quizzes, only: [:show]
 end
