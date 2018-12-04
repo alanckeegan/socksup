@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :last, presence: true
   validates :email, presence: true
   validates :email, uniqueness: true
-  validates :age, presence: true
+  validates :date_of_birth, presence: true
   validates :photo, presence: true
 
 end
