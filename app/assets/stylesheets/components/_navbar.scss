@@ -74,13 +74,13 @@
 }
 
 .dropdown-toggle {
-  color: #ffffff;
+  color: lightgray;
 }
 
 .navbar-socksup-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: $brand-green !important;
+  color: #000000 !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
