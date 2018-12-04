@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_141843) do
+ActiveRecord::Schema.define(version: 2018_12_04_145614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 2018_12_04_141843) do
     t.bigint "quiz_id"
     t.text "description"
     t.string "title"
-    t.datetime "start"
-    t.datetime "end"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.integer "hours_per_week"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2018_12_04_141843) do
     t.text "description"
     t.bigint "employer_id"
     t.string "photo"
-    t.datetime "dob"
+    t.datetime "date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["employer_id"], name: "index_users_on_employer_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
