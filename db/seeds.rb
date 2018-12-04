@@ -10,13 +10,20 @@ Listing.destroy_all
 Quiz.destroy_all
 Employer.destroy_all
 
-puts 'Creating users...'
-pierre = User.create!(first: "Pierre", last: "Cool", )
+puts 'Creating 4 users...'
+pierre = User.create!(first_name: "Pierre", last_name: "Herve-Bazin", date_of_birth: "03-02-95".to_datetime, email: 'pierre@socksup.co.uk', photo: 'https://avatars2.githubusercontent.com/u/42039881?v=4')
+lucas = User.create!(first_name: "Lucas", last_name: "Rocha", date_of_birth: "07-08-99".to_datetime, email: 'lucas@socksup.co.uk', photo: 'https://avatars1.githubusercontent.com/u/42940098?v=4')
+alan = User.create!(first_name: "Alan", last_name: "Keegan", date_of_birth: "28-09-91".to_datetime, email: 'alan@socksup.co.uk', photo: 'https://avatars2.githubusercontent.com/u/41964244?v=4')
+marina = User.create!(first_name: "Marina", last_name: "Kjaer", date_of_birth: "29-07-95".to_datetime, email: 'marina@socksup.co.uk', photo: 'https://avatars3.githubusercontent.com/u/38080513?v=4')
 
-puts 'Creating employers...'
+puts 'Creating 2 employers...'
 linekers = Employer.create!(name: 'Linekers', city: 'Barcelona', description: 'Exciting club in the heart of aq busy city', address: 'Barrio Gotico', contact: 'linekers@socksup.co.uk', photo: 'https://images.unsplash.com/photo-1532452119098-a3650b3c46d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
 smokehouse = Employer.create!(name: 'Smokehouse',description: 'Famous restaurant located on beautiful island', address: '15 Carrer de Lepant',city: 'Ibiza', contact: 'smokehouse@socksup.co.uk', photo: 'https://images.unsplash.com/photo-1522244451342-a41bf8a13d73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
 
+puts 'Making 2 users employers...'
+
+pierre.employer_id = linekers.id
+lucas.employer_id = smokehouse.id
 
 puts 'Creating quizzes....'
 linkersquiz = Quiz.create!()
