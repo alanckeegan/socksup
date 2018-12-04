@@ -1,1 +1,14 @@
-show.html.erb
+<% @quiz.questions.each do |question| %>
+  <div>
+    <p><%= question.question %></p>
+    <% if question.question_type == 'multiple_choice' %>
+      <% option_array = question.wrong_answers %>
+      <% option_array.push(question.correct_answer) %>
+      <% option_array.shuffle.each do |option| %>
+         <p> <%= option %></p>
+      <% end %>
+    <% else %>
+      <p>****this is where text field goes****</p>
+    <% end %>
+  </div>
+<% end %>

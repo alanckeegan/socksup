@@ -1,3 +1,4 @@
 <h1><%= @listing.title %></h1>
 <h3><%= @listing.employer.city %></h3>
 <p><%= @listing.employer.name %></p>
+<%= link_to 'Do Quiz', listing_submissions_path(@listing), method: :post %>

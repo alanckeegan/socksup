@@ -26,6 +26,4 @@ resources :submissions, only: [:show, :delete] do
   resources :quizzes, only: [:show]
 end
 
-  resources :quizzes, only: [:show]
-
 end
