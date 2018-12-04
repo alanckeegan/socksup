@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  border-bottom: 1px solid #e7e7e7;
 }
 
 .navbar_transparent {
@@ -21,6 +22,7 @@
   position: absolute;
   top: 0;
   width: 100%;
+  border-bottom: none;
 }
 /* Logo */
 .navbar-socksup-brand img {
@@ -48,10 +50,16 @@
 }
 
 /* Navbar link */
-.navbar-socksup-link {
+.navbar_transparent .navbar-socksup-link {
   color: #ffffff;
   font-size: 20px;
 }
+
+.navbar-socksup-link {
+  color: #000000;
+  font-size: 20px;
+}
+
 .navbar-socksup-link:hover {
   color: $brand-green;
   text-decoration: none;
