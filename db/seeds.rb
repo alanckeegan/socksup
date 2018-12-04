@@ -10,9 +10,13 @@ Listing.destroy_all
 Quiz.destroy_all
 Employer.destroy_all
 
+puts 'Creating users...'
+pierre = User.create!(first: "Pierre", last: "Cool", )
+
 puts 'Creating employers...'
 linekers = Employer.create!(name: 'Linekers', city: 'Barcelona', description: 'Exciting club in the heart of aq busy city', address: 'Barrio Gotico', contact: 'linekers@socksup.co.uk', photo: 'https://images.unsplash.com/photo-1532452119098-a3650b3c46d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
 smokehouse = Employer.create!(name: 'Smokehouse',description: 'Famous restaurant located on beautiful island', address: '15 Carrer de Lepant',city: 'Ibiza', contact: 'smokehouse@socksup.co.uk', photo: 'https://images.unsplash.com/photo-1522244451342-a41bf8a13d73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
+
 
 puts 'Creating quizzes....'
 linkersquiz = Quiz.create!()
