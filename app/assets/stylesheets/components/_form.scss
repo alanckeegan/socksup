@@ -9,12 +9,13 @@
     label {
       font-size: 15px;
     }
-    #flat_url {
-    display: none;
-    width: 300px;
-    padding-top: 10px;
-  }
-  margin-bottom: 5px;
+    // Not sure if we are using this so I'll leave this here.
+  //   #flat_url {
+  //   display: none;
+  //   width: 300px;
+  //   padding-top: 10px;
+  // }
+  // margin-bottom: 5px;
 }
 
 .form-input {
@@ -44,37 +45,27 @@
   text-align: center;
 }
 
-.button-size {
-  width: 100%;
-  border-radius: 3px;
-  margin: 20px auto;
-}
 
 .label-positioning label {
   padding-left: 6px;
     position: relative;
     top: 2px;
 }
-
-.photo-input {
-  width: 100%;
-  i {
-    font-size: 25px;
-  }
-  i:hover {
-    color: $brand-green;
-  }
-}
-
-#form-show-page {
-  height: 315px;
-  padding: 40px;
-  position: relative;
-  max-width: 300px;
-  bottom: 132px;
-}
+// Not sure if we are using this so I'll leave this here.
+// .photo-input {
+//   width: 100%;
+//   i {
+//     font-size: 25px;
+//   }
+//   i:hover {
+//     color: $brand-green;
+//   }
+// }
 
 .form-signup{
   height: 100vh;
 }
 
+.form-box a {
+  color: $brand-green;
+}

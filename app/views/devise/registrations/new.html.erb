@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
@@ -9,9 +8,9 @@
         <%= f.error_notification %>
         <div class="form-box">
           <div class="form-inputs">
-            <%= f.input :first,
+            <%= f.input :first_name,
                         required: true, placeholder: 'Alan', input_html: { class: 'form-input'}%>
-            <%= f.input :last,
+            <%= f.input :last_name,
                         required: true, placeholder: 'Keegan', input_html: { class: 'form-input'}%>
             <%= f.input :email,
                         required: true,
@@ -26,12 +25,13 @@
                         input_html: { autocomplete: "new-password" }, input_html: { class: 'form-input'}, placeholder: '************' %>
           </div>
           <div class="form-actions">
-          <%= f.button :submit, "Sign up", class: "btn btn-sucess button-size"%>
+          <%= f.button :submit, "Sign up", class: "btn btn-success socksup-primary"%>
         </div>
+        <%= render "devise/shared/links" %>
         </div>
 
       <% end %>
     </div>
   </div>
 </div>
-<%= render "devise/shared/links" %>
+
