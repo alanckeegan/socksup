@@ -10,10 +10,73 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_164820) do
+ActiveRecord::Schema.define(version: 2018_12_04_141843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "employers", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "city"
+    t.string "address"
+    t.string "photo"
+    t.string "contact"
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.bigint "employer_id"
+    t.bigint "quiz_id"
+    t.text "description"
+    t.string "title"
+    t.datetime "start"
+    t.datetime "end"
+    t.integer "hours_per_week"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "photo"
+    t.index ["employer_id"], name: "index_listings_on_employer_id"
+    t.index ["quiz_id"], name: "index_listings_on_quiz_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.bigint "quiz_id"
+    t.text "question"
+    t.string "question_type"
+    t.string "wrong_answer"
+    t.string "correct_answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quiz_id"], name: "index_questions_on_quiz_id"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "responses", force: :cascade do |t|
+    t.bigint "question_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "submission_id"
+    t.index ["question_id"], name: "index_responses_on_question_id"
+    t.index ["submission_id"], name: "index_responses_on_submission_id"
+  end
+
+  create_table "submissions", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "listing_id"
+    t.boolean "submitted"
+    t.boolean "confirmed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_submissions_on_listing_id"
+    t.index ["user_id"], name: "index_submissions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +86,23 @@ ActiveRecord::Schema.define(version: 2018_12_03_164820) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first"
+    t.string "last"
+    t.text "description"
+    t.bigint "employer_id"
+    t.string "photo"
+    t.datetime "dob"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["employer_id"], name: "index_users_on_employer_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "listings", "employers"
+  add_foreign_key "listings", "quizzes"
+  add_foreign_key "questions", "quizzes"
+  add_foreign_key "responses", "questions"
+  add_foreign_key "responses", "submissions"
+  add_foreign_key "submissions", "listings"
+  add_foreign_key "submissions", "users"
+  add_foreign_key "users", "employers"
 end

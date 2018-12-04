@@ -1,0 +1,9 @@
+<% @listings.each do |listing| %>
+      <ul>
+        <li><%= listing.title %></li>
+        <li><%= listing.employer.city %></li>
+        <li><%= listing.employer.name %></li>
+        <li><%= link_to 'See More', listing_path(listing) %></li>
+      </ul>
+<% end %>
+

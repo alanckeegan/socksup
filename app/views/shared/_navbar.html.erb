@@ -1,4 +1,4 @@
-<div class="navbar-socksup">
+<div class="navbar-socksup navbar-static-top <% if @transparent_navbar %>navbar_transparent <% end %>">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-socksup-brand" do %>
     <%= image_tag "logo.png", height: 50 %>
@@ -40,7 +40,7 @@
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Log in"), new_user_session_path, class: "navbar-socksup-item navbar-socksup-link" %>
-      <%= link_to t(".sign_up", default: "Sign up"), new_user_session_path, class: "navbar-socksup-item navbar-socksup-link" %>
+      <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path, class: "navbar-socksup-item navbar-socksup-link" %>
     <% end %>
   </div>
 
