@@ -1,11 +1,9 @@
-
 <% @listings.each do |listing| %>
-  <% if listing.employer.city == params[:query][:city] %>
       <ul>
         <li><%= listing.title %></li>
         <li><%= listing.employer.city %></li>
         <li><%= listing.employer.name %></li>
+        <li><%= link_to 'See More', listing_path(listing) %></li>
       </ul>
-    <% end %>
 <% end %>
 
