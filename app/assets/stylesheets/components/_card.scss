@@ -1,0 +1,66 @@
+.card {
+  background-size: cover !important;
+  background-position: center;
+  height: 167px;
+  border-radius: 5px;
+  max-width: 400px;
+}
+
+.card h2 {
+  font-size: 24px;
+}
+
+.card h3 {
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 14px;
+}
+
+.card-content {
+  color: white;
+}
+
+.info {
+  background: rgba(black, 0.5);
+  position: relative;
+  top: 95px;
+  height: 55px;
+}
+
+.card-title {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  margin: 0;
+}
+
+.card-location {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  margin: 0;
+}
+
+.card-description {
+  position: absolute;
+  bottom: 5px;
+  left: 7px;
+  margin: 0;
+  font-weight: lighter;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
