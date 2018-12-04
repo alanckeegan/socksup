@@ -1,0 +1,8 @@
+<% @listings.each do |listing| %>
+<ul>
+  <li><%= listing.title %></li>
+  <li><%= listing.employer.city %></li>
+  <li><%= listing.employer.name %></li>
+</ul>
+<% end %>
+
