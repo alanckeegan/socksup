@@ -1,8 +1,11 @@
+
 <% @listings.each do |listing| %>
-<ul>
-  <li><%= listing.title %></li>
-  <li><%= listing.employer.city %></li>
-  <li><%= listing.employer.name %></li>
-</ul>
+  <% if listing.employer.city == params[:query][:city] %>
+      <ul>
+        <li><%= listing.title %></li>
+        <li><%= listing.employer.city %></li>
+        <li><%= listing.employer.name %></li>
+      </ul>
+    <% end %>
 <% end %>
 
