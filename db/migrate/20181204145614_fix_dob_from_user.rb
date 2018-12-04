@@ -1,4 +1,4 @@
-class RemoveDobFromUser < ActiveRecord::Migration[5.2]
+class FixDobFromUser < ActiveRecord::Migration[5.2]
  def change
     rename_column :users, :dob, :date_of_birth
   end
