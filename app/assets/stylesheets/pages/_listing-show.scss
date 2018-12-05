@@ -7,6 +7,9 @@
   display: flex;
   justify-content: space-around;
   position:relative;
+   background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .banner-content-listing-show {
@@ -63,4 +66,14 @@
     margin: 0 auto;
     width: 75%
   }
+}
+
+.horizontal {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.mapboxgl-canvas {
+  display: flex;
 }
