@@ -10,12 +10,12 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Profile", "#", class: "navbar-socksup-item navbar-socksup-link" %>
+      <%= link_to "Profile", user_path(current_user), class: "navbar-socksup-item navbar-socksup-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-socksup-item">
         <div class="dropdown">
-          <%= image_tag "https://source.unsplash.com/user/erondu", class: "avatar dropdown-toggle", id: "navbar-socksup-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-socksup-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-socksup-dropdown-menu">
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
