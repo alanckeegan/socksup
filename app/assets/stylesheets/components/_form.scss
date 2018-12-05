@@ -19,7 +19,7 @@
 }
 
 .form-input {
-  background- : white;
+  background-color: white;
   border: 1px solid lightgray;
   border-radius: 5px;
   box-shadow: none;
@@ -68,4 +68,14 @@
 
 .form-box a {
   color: $brand-green;
+}
+
+.search-bar {
+  position: relative;
+  margin-top: 15px;
+}
+
+.filter-button {
+  position: absolute;
+  right: 5px;
 }
