@@ -1,4 +1,9 @@
 <h1><%= @listing.title %></h1>
 <h3><%= @listing.employer.city %></h3>
 <p><%= @listing.employer.name %></p>
+<p><%= @listing.description %></p>
+<p>Start Date: <%= @listing.start_date.strftime("%d/%m/%Y")  %></p>
+<p>End Date:<%= @listing.end_date.strftime("%d/%m/%Y")  %></p>
+<p>Hours per week: <%= @listing.hours_per_week %></p>
 <%= link_to 'Do Quiz', listing_submissions_path(@listing), method: :post %>
+<img src="<%= @listing.photo %>" alt="">
