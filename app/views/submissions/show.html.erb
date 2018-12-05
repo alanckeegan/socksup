@@ -6,6 +6,7 @@
    <h3><%= r.content %></h3>
 
 <% end %>
-<!-- add submit button javascript to change to submitted -->
+
 <%= link_to "Submit", submit_path(@submission), method: :patch, class: "btn btn-primary", id: "submit-button", remote: :true %>
-<!-- and redirect to profile page -->
+
+<%= link_to "Back to Profile", user_path(current_user), class: "btn btn-primary" %>
