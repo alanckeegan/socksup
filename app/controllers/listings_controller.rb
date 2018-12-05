@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
     if params[:query][:city] == ("" || nil)
       @listings = Listing.all
     else
-      @listings = Listing.joins(:employer).where(employers: {city: params[:query][:city]})
+      @listings = Listing.joins(:employer).where(employers: {city: params[:query][:city].capitalize})
     end
   end
 
