@@ -1,0 +1,37 @@
+
+<div class="inbox-container"></div>
+  <div class="inbox">
+    <p><%@user.submissions.each do |s|%></p>
+    <div class="inbox-card">
+      <div class="inbox-info">
+        <div class="big">
+          <%= "#{s.user.first_name}"%>
+        </div>
+        <div class="small">
+          <%= "#{s.user.last_name}"%>
+        </div>
+      </div>
+      <div class="inbox-info">
+        <div class="big">
+          <%= "#{s.listing.employer.name}" %>
+        </div>
+        <div class="small">
+          <%= "#{s.listing.start_date.strftime("%B %d, %Y")} - #{s.listing.start_date.strftime("%B %d, %Y")}" %>
+        </div>
+      </div>
+      <div class="inbox-info">
+        <% if s.submitted == false %>
+            Not Yet Submitted
+        <% elsif s.confirmed == true%>
+            Accepted!
+        <% elsif s.confirmed.nil?%>
+           <p>Awaiting Response</p>
+        <% else s.confirmed == false%>
+          <p>REJECTED</p>
+        <% end %>
+      </div>
+    </div>
+        <hr width="50%">
+    <% end %>
+  </div>
+</div>

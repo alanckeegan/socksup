@@ -1,2 +1,6 @@
 <p><%= current_user.first_name%> <%= current_user.last_name%></p>
 <%= image_tag current_user.photo %>
+
+<div class="inbox-container">
+  <%= render 'shared/user-submissions-inbox' %>
+</div>
