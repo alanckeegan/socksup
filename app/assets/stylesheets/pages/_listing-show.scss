@@ -52,8 +52,15 @@
 
 }
 
+.listing-show-job-hours {
+  margin-top: 14px;
+}
+
 .listing-show-job-dates {
-  text-align: center;
+  width: 60%;
+  &span {
+  display: inline-block;
+}
 }
 
 .listing-show-job-description {
@@ -69,11 +76,38 @@
 }
 
 .horizontal {
+  background-color: #a9a9a9;
   margin-top: 50px;
-  display: flex;
-  justify-content: space-around;
+
+  position: relative;
 }
 
-.mapboxgl-canvas {
-  display: flex;
+.mapboxgl-canvas #map {
+  width: 100vw;
+  height: 500px;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#map {
+  width: 100vw !important;
+
+}
+
+
+#job-info-hr {
+  width: 50vw;
+  border-color: $brand-success;
+}
+
+.box-address-over-map {
+  position: absolute;
+  background-color: white;
+  border-top: 6px solid $brand-success;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px rgba(150, 150, 150, 0.1);
+  left: 2.5%;
+  bottom: -45px;
+  z-index: 5;
+  padding: 20px;
 }
