@@ -1,14 +1,37 @@
-<% @quiz.questions.each do |question| %>
-  <div>
-    <p><%= question.question %></p>
-    <% if question.question_type == 'multiple_choice' %>
-      <% option_array = question.wrong_answers %>
-      <% option_array.push(question.correct_answer) %>
-      <% option_array.shuffle.each do |option| %>
-         <p> <%= option %></p>
-      <% end %>
-    <% else %>
-      <p>****this is where text field goes****</p>
-    <% end %>
-  </div>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <% @quiz.questions.each do |question| %>
+
+      <!-- Make a simple form -->
+        <div>
+          <%= simple_form_for([@submission, Response.new]) do |f| %>
+          <!-- question for form -->
+          <p><strong> <%= question.question %></strong></p>
+
+
+          <% if question.question_type == 'multiple_choice' %>
+
+            <% option_array = question.wrong_answers %>
+            <% option_array.push(question.correct_answer) %>
+             <%= f.input_field :content, as: :radio_buttons, collection: option_array.shuffle, :item_wrapper_class => 'inline'
+              %>
+          <% else %>
+
+          <!-- Show text entry -->
+            <p>****this is where text field goes****</p>
+          <% end %>
+
+            <%= f.input :question_id, as: :hidden, :input_html => { value: question.id } %>
+        <%= f.submit "Submit Answer!:) " %>
+        <% end %>
+        </div>
+        <% end %>
+      </div>
+   </div>
+</div>
+
+
+
+
+
