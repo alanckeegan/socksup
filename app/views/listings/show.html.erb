@@ -7,3 +7,12 @@
 <p>Hours per week: <%= @listing.hours_per_week %></p>
 <%= link_to 'Do Quiz', listing_submissions_path(@listing), method: :post %>
 <img src="<%= @listing.photo %>" alt="">
+<div class="horizontal">
+      <div
+  id="map"
+  style="width: 75%;
+  height: 400px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+    </div>
