@@ -20,8 +20,10 @@
         </div>
       </div>
       <div class="inbox-info">
-        <% if s.submitted.nil? %>
-            Not Yet Submitted
+        <% if s.responses.count < s.listing.quiz.questions.count %>
+          Incomplete,
+        <% elsif s.submitted.nil? %>
+          <%= link_to "Submit", submit_path(s), method: :patch, class: "btn btn-primary", id: "submit-button", remote: :true %>
         <% elsif s.confirmed == true%>
             Accepted!
         <% elsif s.confirmed.nil?%>
