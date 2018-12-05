@@ -1,9 +1,28 @@
-<% @listings.each do |listing| %>
-      <ul>
-        <li><%= listing.title %></li>
-        <li><%= listing.employer.city %></li>
-        <li><%= listing.employer.name %></li>
-        <li><%= link_to 'See More', listing_path(listing) %></li>
-      </ul>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <%= form_tag listings_path, method: :get do %>
+      <%= text_field_tag :query, params[:query][:city], class: "form-control", placeholder: "Location" %>
+    <% end %>
 
+    </div>
+    </div>
+  </div>
+  <div class="row">
+    <% @listings.each do |listing| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <%= link_to listing_path(listing) do %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('<%= listing.photo %>');">
+              <div class="card-content">
+                <div class="info">
+                  <h2 class="card-title"><%= listing.title %></h2>
+                  <h3 class="card-location"><%= listing.employer.city %></h3>
+                  <p class="card-description"><%= listing.employer.name %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+    <% end %>
+  </div>
+</div>
