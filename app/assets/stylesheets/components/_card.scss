@@ -5,6 +5,8 @@
   border-radius: 5px;
   max-width: 400px;
   margin: 10px 0;
+  box-shadow: 5px 5px 15px rgba(150,150,150,0.7);
+  border-top: 5px solid $brand-green;
 }
 
 .card h2 {
