@@ -14,12 +14,13 @@
 
 <div class="listing-show-job-info">
   <div class="listing-show-job-dates">
-    <p>Start Date: <br> <%= @listing.start_date.strftime("%d/%m/%Y")  %></p>
-    <p>End Date: <br> <%= @listing.end_date.strftime("%d/%m/%Y")  %></p>
+    <span style="float: left;" id="start_date"><p><i class="fas fa-walking"></i> Start Date<br> <%= @listing.start_date.strftime("%d/%m/%Y")  %></p></span>
+    <span style="float: right;"id="end_date"><p>End Date <i class="fas fa-walking"></i><br> <%= @listing.end_date.strftime("%d/%m/%Y")  %></p></span>
   </div>
   <div class="listing-show-job-hours">
-    <p>Hours per week: <%= @listing.hours_per_week %></p>
+    <p>Hours per week: <%= @listing.hours_per_week %> <i class="far fa-clock"></i></p>
   </div>
+  <hr id="job-info-hr">
   <div class="listing-show-job-description">
     <h4>About this job</h4>
     <p><%= @listing.description %> <br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas optio a reprehenderit, animi sint dolor quia eveniet quaerat quidem ab, nulla laboriosam! Qui, odit perferendis explicabo incidunt delectus error reiciendis? </p>
@@ -34,7 +35,13 @@
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   >
-  </div>
 </div>
+<div class="box-address-over-map">
+  <p><strong>Address</strong></p>
+  <p><%= @listing.employer.address %> 56 carrer del something</p>
+</div>
+</div>
+
+
 
 
