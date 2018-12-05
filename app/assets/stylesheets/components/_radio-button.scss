@@ -1,0 +1,30 @@
+.inline input {
+  display: none;
+}
+
+.inline {
+    background-color: white;
+    border: 2px solid $brand-green;
+    margin: 10px auto;
+    text-align: center;
+    height: 80px;
+    border-radius: 30px;
+    max-width: 400px;
+
+}
+
+.inline label {
+  padding-top: 25px;
+  height: 100%;
+  width: 100%;
+  border-radius: 26px;
+  &.active {
+    background-color: $brand-green;
+    color: white;
+  }
+}
+
+.quiz-button {
+  position: relative;
+  left: 10px;
+}
