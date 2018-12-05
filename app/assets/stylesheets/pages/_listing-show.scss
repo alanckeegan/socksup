@@ -1,0 +1,79 @@
+.banner-listing-show {
+  color: white;
+  height: 40vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  background-position: center;
+  display: flex;
+  justify-content: space-around;
+  position:relative;
+   background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner-content-listing-show {
+  position: absolute;
+  left: 20px;
+  h1 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 25px;
+}
+}
+
+.banner-content-listing-button {
+  width: 40%;
+  position: absolute;
+  bottom: -20px;
+  text-align: center;
+
+}
+
+.banner-content-listing-button .socksup-primary {
+  width: 100%;
+}
+
+.banner-content-listing-city {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+
+.listing-show-job-info {
+  margin-top: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+
+}
+
+.listing-show-job-dates {
+  text-align: center;
+}
+
+.listing-show-job-description {
+  justify-content: center;
+  h4 {
+  text-align: center;
+}
+  p {
+    text-align: center;
+    margin: 0 auto;
+    width: 75%
+  }
+}
+
+.horizontal {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.mapboxgl-canvas {
+  display: flex;
+}
