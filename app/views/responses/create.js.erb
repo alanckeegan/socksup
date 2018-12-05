@@ -1,0 +1,37 @@
+// function addListener(element) {
+
+//   })
+// }
+
+function setListeners() {
+
+  const buttons = document.querySelectorAll('.collection_radio_buttons');
+
+  if (buttons) {
+    buttons.forEach((element) => {
+      element.addEventListener('click', function(event) {
+        buttons.forEach(button => button.classList.remove("active"));
+      // console.log(event)
+      // event.removeClassList('active')
+        event.currentTarget.classList.toggle('active');
+      });
+    });
+  };
+};
+
+function resetForm(formHTML) {
+  const form = document.getElementById("new_response");
+  form.innerHTML = formHTML;
+};
+
+<% if @response.question == @response.question.quiz.questions.last %>
+  resetForm('<%= link_to "View and Confirm", submission_path(@response.submission)%>')
+<%else%>
+  resetForm('<%= j render "quizzes/question-form", submission: @response.submission, question: @next_question %>');
+  setListeners();
+<% end %>
+
+
+
+
+

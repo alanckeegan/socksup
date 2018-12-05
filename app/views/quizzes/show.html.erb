@@ -1,34 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <%# @quiz.questions.each do |question| %>
-      <%= simple_form_for([@submission, Response.new]) do |f| %>
-      <!-- Make a simple form -->
-      <div class="question">
-        <!-- question for form -->
-        <% question = @quiz.questions.find(5) %>
-        <p class="text-center"><strong> <%= question.question %></strong></p>
 
-        <% if question.question_type == 'multiple_choice' %>
-          <% option_array = question.wrong_answers %>
-          <% option_array.push(question.correct_answer) %>
-          <%= f.input_field :content, as: :radio_buttons, collection: option_array. shuffle, :item_wrapper_class => 'inline'
-          %>
-        <% else %>
-          <!-- Show text entry -->
+       <% question = @quiz.questions.first %>
+       <%= render 'quizzes/question-form', submission: @submission, question: question %>
 
-              <%= f.input_field :content %>
+    </div>
 
-        <% end %>
-            <%= f.submit "Submit Answer!", class:"btn btn-success socksup-primary" %>
-
-        <%= f.input :question_id, as: :hidden, :input_html => { value: question.id } %>
-      </div>
-      <% end %>
-      <%# end %>
-      </div>
-     <%= link_to "View and Confirm", submission_path(@submission)%>
-   </div>
+  </div>
 </div>
 
 

@@ -2,6 +2,10 @@
   display: none;
 }
 
+#question-form{
+  text-align: center;
+  padding: 50px;
+}
 .inline {
     background-color: white;
     border: 2px solid $brand-green;
@@ -11,6 +15,11 @@
     border-radius: 30px;
     max-width: 400px;
 
+}
+.text-field{
+  width: 200px;
+  height: 180px;
+  text-align: center;
 }
 
 .inline label {
@@ -25,6 +34,5 @@
 }
 
 .quiz-button {
-  position: relative;
-  left: 10px;
+  width: 150px;
 }
