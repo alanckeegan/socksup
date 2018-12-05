@@ -21,5 +21,5 @@ resources :submissions, only: [:show] do
 end
 
 get 'quizzes/:quiz_id/submissions/:id', to: 'quizzes#show', as: :take_quiz
-
+patch 'submissions/:id/submit', to: 'submissions#submit', as: :submit
 end
