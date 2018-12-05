@@ -4,26 +4,22 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
-resources :users
-resources :employers do
+resources :users, only: [:show]
+resources :employers, only: [:show] do
   resources :listings, only: [:new, :create]
 end
 
+resources :questions, only: [:new, :create]
 
-resources :quizzes, except: [:index, :show] do
-  resources :questions, only: [:new, :create]
-  resources :responses, only: [:index, :new, :create]
-end
-
-
-resources :listings, only: [:index,:show, :update, :edit, :delete] do
+resources :listings, only: [:index,:show] do
   resources :submissions, only: [:create]
 end
 
-resources :questions, only: [:edit, :update, :delete]
-resources :submissions, only: [:delete]
-resources :submissions, only: [:show, :delete] do
-  resources :quizzes, only: [:show]
+resources :submissions, only: [:show] do
+  # resources :quizzes, only: [:show]
+  resources :responses, only: [:index, :new, :create]
 end
+
+get 'quizzes/:quiz_id/submissions/:id', to: 'quizzes#show', as: :take_quiz
 
 end
