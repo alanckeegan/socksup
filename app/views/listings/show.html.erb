@@ -1,4 +1,4 @@
-<div class="banner-listing-show" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @listing.photo %>');">
+<div class="banner-listing-show" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('<%= @listing.photo %>');">
   <div class="banner-content-listing-show">
     <h1><%= @listing.title %></h1>
     <h3><%= @listing.employer.name %></h3>
@@ -25,20 +25,16 @@
     <p><%= @listing.description %> <br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas optio a reprehenderit, animi sint dolor quia eveniet quaerat quidem ab, nulla laboriosam! Qui, odit perferendis explicabo incidunt delectus error reiciendis? </p>
   </div>
 </div>
-<p><%#= @listing.description %></p>
-<p>Start Date: <%#= @listing.start_date.strftime("%d/%m/%Y")  %></p>
-<p>End Date:<%#= @listing.end_date.strftime("%d/%m/%Y")  %></p>
-
-<%#= link_to 'Do Quiz',  -->listing_submissions_path(@listing), method: :post %>
 
 <div class="horizontal">
-      <div
+  <div
   id="map"
   style="width: 75%;
   height: 400px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
-    </div>
+  >
+  </div>
+</div>
 
 
