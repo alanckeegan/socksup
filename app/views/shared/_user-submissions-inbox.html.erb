@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="inbox-info">
-        <% if s.submitted == false %>
+        <% if s.submitted.nil? %>
             Not Yet Submitted
         <% elsif s.confirmed == true%>
             Accepted!
