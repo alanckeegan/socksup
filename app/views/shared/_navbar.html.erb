@@ -10,7 +10,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Profile", "#", class: "navbar-socksup-item navbar-socksup-link" %>
+      <%= link_to "Profile", user_path(current_user), class: "navbar-socksup-item navbar-socksup-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-socksup-item">
