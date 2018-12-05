@@ -1,49 +1,37 @@
-<% @quiz.questions.each do |question| %>
-
-
-<!-- Make a simple form -->
-  <div>
-    <!-- question for form -->
-    <p><%= question.question %></p>
-
-
-    <% if question.question_type == 'multiple_choice' %>
-
-      <% option_array = question.wrong_answers %>
-      <% option_array.push(question.correct_answer) %>
-      <% option_array.shuffle.each do |option| %>
-
-        <!-- make each of these a radio button -->
-         <p> <%= option %></p>
-
-
-      <% end %>
-    <% else %>
-
-    <!-- Show text entry -->
-      <p>****this is where text field goes****</p>
-    <% end %>
-
-
-      <!-- trying to pass question_id as hidden field -->
-      <% f.input question_id = question.id, as: :hidden %>
-
-      <!-- submit button -->
-      <!-- sends to /submission/id/response  (response#create). method post -->
-<!-- End simple form -->
-  </div>
-<% end %>
-
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <div class="form-post">
-        <p>question.question</p>
-        <%= simple_form_for([@submission, response]) do |f| %>
-        <%= f.input :answer  %>
-          <%= f.submit "Save", class: "btn btn-primary"  %>
+      <% @quiz.questions.each do |question| %>
+
+      <!-- Make a simple form -->
+        <div>
+          <%= simple_form_for([@submission, Response.new]) do |f| %>
+          <!-- question for form -->
+          <p><strong> <%= question.question %></strong></p>
+
+
+          <% if question.question_type == 'multiple_choice' %>
+
+            <% option_array = question.wrong_answers %>
+            <% option_array.push(question.correct_answer) %>
+             <%= f.input_field :content, as: :radio_buttons, collection: option_array.shuffle, :item_wrapper_class => 'inline'
+              %>
+          <% else %>
+
+          <!-- Show text entry -->
+            <p>****this is where text field goes****</p>
+          <% end %>
+
+            <%= f.input :question_id, as: :hidden, :input_html => { value: question.id } %>
+        <%= f.submit "Submit Answer!:) " %>
+        <% end %>
+        </div>
         <% end %>
       </div>
-    </div>
-  </div>
+   </div>
 </div>
+
+
+
+
+
