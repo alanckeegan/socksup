@@ -1,28 +1,29 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <%= form_tag listings_path, method: :get do %>
-      <%= text_field_tag :query, params[:query][:city], class: "form-control", placeholder: "Location" %>
-    <% end %>
-
-    </div>
+      <%= simple_form_for :query, :url => listings_path, method: "get" do |f| %>
+      <%= f.input :city, as: :string, required: true, placeholder:'Location', label: false, class: "form-control", input_html: {value: params[:query][:city]}  %>
+      <%= f.input :title, as: :string, required: true, placeholder:'Job Type', label: false, class: "form-control", input_html: {value: params[:query][:title]} %>
+      <%= f.button :submit, "Filter", class: "btn btn-success socksup-primary" %>
+      <% end %>
     </div>
   </div>
-  <div class="row">
-    <% @listings.each do |listing| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <%= link_to listing_path(listing) do %>
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('<%= listing.photo %>');">
-              <div class="card-content">
-                <div class="info">
-                  <h2 class="card-title"><%= listing.title %></h2>
-                  <h3 class="card-location"><%= listing.employer.city %></h3>
-                  <p class="card-description"><%= listing.employer.name %></p>
-                </div>
-              </div>
-            </div>
-          <% end %>
+</div>
+<div class="row">
+  <% @listings.each do |listing| %>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <%= link_to listing_path(listing) do %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('<%= listing.photo %>');">
+      <div class="card-content">
+        <div class="info">
+          <h2 class="card-title"><%= listing.title %></h2>
+          <h3 class="card-location"><%= listing.employer.city %></h3>
+          <p class="card-description"><%= listing.employer.name %></p>
         </div>
+      </div>
+    </div>
     <% end %>
   </div>
+  <% end %>
+</div>
 </div>
