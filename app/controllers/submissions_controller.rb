@@ -11,4 +11,15 @@ class SubmissionsController < ApplicationController
     @submission = Submission.find(params[:id])
   end
 
+  def submit
+    @submission = Submission.find(params[:id])
+    @submission.submitted = true
+    @submission.save
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  private
+
 end
