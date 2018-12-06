@@ -16,14 +16,14 @@
 <div class="modal fade" id="confirmSubmission" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header text-center">
         <h5  id="exampleModalCenterTitle">Congratulations!</h5>
       </div>
       <div class="modal-body">
         <%= "You've successfully submitted your quiz to be a #{@submission.listing.title.downcase}.\n #{@submission.listing.employer.name} will review your application and their contact details will be available to you if your application is approved." %>
       </div>
       <div>
-        <div class="modal-footer ">
+        <div class="modal-footer modal-center-text">
           <div class="modal-button">
             <%= link_to 'Look for More Jobs', listings_path, class: "btn btn-success socksup-primary" %>
           </div>
