@@ -3,10 +3,11 @@
   <!-- Make a simple form -->
   <!-- question for form -->
 
-    <p class="text-center"><strong> <%= question.question %></strong></p>
+    <p class="text-center" id="actual-question"><strong> <%= question.question %></strong></p>
+
 
     <% completed_questions = question.quiz.questions.index(question)  %>
-    <% incomplete_questions =  question.quiz.questions.count - completed_questions%>
+    <% incomplete_questions = question.quiz.questions.count - completed_questions%>
 
 
   <% if question.question_type == 'multiple_choice' %>
