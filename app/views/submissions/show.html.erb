@@ -8,6 +8,31 @@
 
 <% end %>
 
-<%= link_to "Submit", submit_path(@submission), method: :patch, class: "btn btn-primary", id: "submit-button", remote: :true %>
+<%= button_to "Submit", submit_path(@submission), method: :patch, class: "btn btn-primary", id: "submit-button", remote: :true, "data-toggle" => "modal", "data-target" => "#confirmSubmission" %>
 
-<%= link_to "Back to Profile", user_path(current_user), class: "btn btn-primary" %>
+
+
+<!-- data: {toggle: "modal", target: "#exampleModal"} -->
+
+<div class="modal fade" id="confirmSubmission" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5  id="exampleModalCenterTitle">Congrats!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= "You've successfully submitted your quiz to be a #{@submission.listing.title.downcase} at #{@submission.listing.employer.name}" %>
+      </div>
+      <div class="modal-footer ">
+        <%= link_to 'Look for More Jobs', listings_path, class: "btn btn-success socksup-primary" %>
+        <%= link_to 'See My Applications', user_path(@submission.user), class: "btn btn-success socksup-primary" %>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
