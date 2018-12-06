@@ -37,11 +37,11 @@ Question.create!(question: 'What is your greatest fear?', question_type: 'text_f
 Question.create!(question: 'Which of these ingredients is not in a Gin Tonic?', question_type: 'multiple_choice', quiz_id: linkersquiz.id, correct_answer: 'Sand', wrong_answers: ['Gin', 'Tonic', 'Lime'])
 Question.create!(question: 'What color are Jude Law\'s Eyes?', question_type: 'multiple_choice', quiz_id: linkersquiz.id, correct_answer: 'Who cares?', wrong_answers: ['Blue-green', 'Hazel', 'Blue'])
 Question.create!(question: 'Who the bomb?', question_type: 'multiple_choice', quiz_id: linkersquiz.id, correct_answer: 'You the bomb', wrong_answers: ['Bomberman', 'Bombay', 'Bombastic Boys'])
-Question.create!(question: 'Smokehouse Question one?', question_type: 'text_field', quiz_id: smokehousequiz.id)
-Question.create!(question: 'Smokehouse Question two?', question_type: 'text_field', quiz_id: smokehousequiz.id)
-Question.create!(question: 'Smokehouse Question three?', question_type: 'text_field', quiz_id: smokehousequiz.id)
-Question.create!(question: 'Smokehouse Question four?', question_type: 'multiple_choice', quiz_id: smokehousequiz.id, correct_answer: 'correct', wrong_answers: ['incorrect1', 'incorrect2', 'incorrect3'])
-Question.create!(question: 'Smokehouse Question five?', question_type: 'multiple_choice', quiz_id: smokehousequiz.id, correct_answer: 'correct', wrong_answers: ['incorrect1', 'incorrect2', 'incorrect3'])
+Question.create!(question: 'What is your favorite song?', question_type: 'text_field', quiz_id: smokehousequiz.id)
+Question.create!(question: 'How much garlic is too much garlic?', question_type: 'text_field', quiz_id: smokehousequiz.id)
+Question.create!(question: 'Would you rather have fingers the size of legs, or legs the size of fingers?', question_type: 'text_field', quiz_id: smokehousequiz.id)
+Question.create!(question: 'Which word best descriptes the shape of Brasilia?', question_type: 'multiple_choice', quiz_id: smokehousequiz.id, correct_answer: 'Airplane', wrong_answers: ['River', 'Turtle', 'Ellipse'])
+Question.create!(question: 'What color is an airplane "black box"', question_type: 'multiple_choice', quiz_id: smokehousequiz.id, correct_answer: 'Orange', wrong_answers: ['Black', 'Grey', 'Blue'])
 
 puts 'Creating listings...'
 Listing.create!(title: 'Bartender',hours_per_week: 20, start_date: '01-12-2018'.to_datetime, end_date: '31-12-2018'.to_datetime, description: 'We are looking for reliable, personable, well presented waiting staff, butlers, bartenders for events & private parties. Casual flexible position.',  employer_id: linekers.id, quiz_id: linkersquiz.id, photo: 'https://images.unsplash.com/photo-1515674213736-54d14b4285b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
