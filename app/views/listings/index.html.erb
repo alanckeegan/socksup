@@ -1,15 +1,21 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="search-bar">
+
         <%= simple_form_for :query, :url => listings_path, method: "get" do |f| %>
-        <%= f.input :city, as: :string, required: true, placeholder:'Location', label: false, class: "form-control", input_html: {value: params[:query][:city], class: 'form-input'} %>
-        <%= f.input :title, as: :string, required: true, placeholder:'Job Type', label: false, class: "form-control", input_html: {value: params[:query][:title], class: 'form-input'} %>
-          <%= f.button :submit, "Filter", class: "btn btn-success socksup-secondary socksup-btn-small pull-right" %>
+      <div class="search-bar">
+        <div class="row">
+          <div class="col-xs-5">
+          <%= f.input :city, as: :string, required: true, placeholder:'Location', label: false, input_html: {value: params[:query][:city], class: 'form-input'} %>
+          </div>
+          <div class="col-xs-5">
+          <%= f.input :title, as: :string, required: true, placeholder:'Job Type', label: false, input_html: {value: params[:query][:title], class: 'form-input'} %>
+          </div>
+          <div class="col-xs-2">
+            <%= f.button :submit, "Filter", class: "btn btn-success socksup-secondary" %>
+          </div>
+        </div>
       </div>
       <% end %>
-    </div>
-  </div>
+
   <div class="row">
     <% @listings.each do |listing| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
