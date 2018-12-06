@@ -8,6 +8,16 @@
 
     <% completed_questions = question.quiz.questions.index(question)  %>
     <% incomplete_questions = question.quiz.questions.count - completed_questions%>
+  <div class="progress-flex">
+    <div class="progress-bar" >
+      <% completed_questions.times do %>
+      <span class="completed-dot"></span>
+      <% end %>
+      <% incomplete_questions.times do %>
+      <span class="incomplete-dot"></span>
+      <% end %>
+    </div>
+  </div>
 
 
   <% if question.question_type == 'multiple_choice' %>
@@ -21,16 +31,6 @@
     <%= f.input_field :content, placeholder: 'Your answer', :required => true, class: "text-field form-input"%>
   </div>
   <% end %>
-  <div class="progress-flex">
-    <div class="progress-bar" >
-      <% completed_questions.times do %>
-      <span class="completed-dot"></span>
-      <% end %>
-      <% incomplete_questions.times do %>
-      <span class="incomplete-dot"></span>
-      <% end %>
-    </div>
-  </div>
   <%= f.submit "Next", class:"btn btn-success socksup-primary quiz-button", id: "submit-button" %>
   <%= f.input :question_id, as: :hidden, :input_html => { value: question.id } %>
   <% end %>
