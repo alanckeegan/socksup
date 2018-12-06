@@ -2,7 +2,9 @@
   <%= simple_form_for([submission, Response.new], remote: true) do |f| %>
   <!-- Make a simple form -->
   <!-- question for form -->
-  <p class="text-center"><strong> <%= question.question %></strong></p>
+  <div class="question">
+    <p class="text-center"><strong> <%= question.question %></strong></p>
+  </div>
   <% if question.question_type == 'multiple_choice' %>
   <% option_array = question.wrong_answers %>
   <% option_array.push(question.correct_answer) %>
@@ -11,10 +13,10 @@
   <% else %>
   <!-- Show text entry -->
   <div>
-    <%= f.input_field :content, class: "text-field"%>
+      <%= f.input_field :content, placeholder: 'Your answer', class: "text-field form-input"%>
   </div>
   <% end %>
-  <%= f.submit "Submit Answer!", class:"btn btn-success socksup-primary quiz-button" %>
+  <%= f.submit "Next", class:"btn btn-success socksup-primary quiz-button" %>
   <%= f.input :question_id, as: :hidden, :input_html => { value: question.id } %>
   <% end %>
 </div>
