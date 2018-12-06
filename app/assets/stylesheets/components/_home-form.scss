@@ -1,6 +1,19 @@
 .search-bar {
-  display: flex;
+  display: grid;
+  grid-template-columns: 3fr 3fr 2fr;
+  margin-bottom: -10px;
 
 }
 
+  .field  {
+    align-items: center;
+    margin-right: 5px;
+    .socksup-secondary{
+      width: 100%;
+    }
+  }
+
+.final{
+  margin-right: 0px;
+}
 

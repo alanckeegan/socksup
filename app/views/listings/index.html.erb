@@ -2,17 +2,16 @@
 
         <%= simple_form_for :query, :url => listings_path, method: "get" do |f| %>
       <div class="search-bar">
-        <div class="row">
-          <div class="col-xs-5">
-          <%= f.input :city, as: :string, required: true, placeholder:'Location', label: false, input_html: {value: params[:query][:city], class: 'form-input'} %>
+          <div class="field">
+          <%= f.input :city, as: :string, required: true, placeholder:'Location', label: false, input_html: {value: params[:query][:city], class: 'form-input field'} %>
           </div>
-          <div class="col-xs-5">
-          <%= f.input :title, as: :string, required: true, placeholder:'Job Type', label: false, input_html: {value: params[:query][:title], class: 'form-input'} %>
+          <div class="field">
+          <%= f.input :title, as: :string, required: true, placeholder:'Job Type', label: false, input_html: {value: params[:query][:title], class: 'form-input field'} %>
           </div>
-          <div class="col-xs-2">
-            <%= f.button :submit, "Filter", class: "btn btn-success socksup-secondary" %>
+          <div class="field final">
+            <%= f.button :submit, "Filter", class: "btn btn-success socksup-secondary field" %>
           </div>
-        </div>
+
       </div>
       <% end %>
 
