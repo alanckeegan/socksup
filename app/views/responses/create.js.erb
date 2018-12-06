@@ -30,7 +30,8 @@ function resetForm(formHTML) {
   resetForm('<%= j render "quizzes/question-form", submission: @response.submission, question: @next_question %>');
   setListeners();
 <% else %>
-  resetForm('<%= j render "quizzes/question-form", submission: @response.submission, question: @response.question %>');
+  const warning_marker = document.getElementById('actual-question')
+  warning_marker.insertAdjacentHTML('afterend','<div class="warning">You must answer to continue!</div>')
   setListeners();
 <% end%>
 
