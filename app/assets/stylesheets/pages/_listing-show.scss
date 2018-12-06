@@ -1,44 +1,53 @@
 .banner-listing-show {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   color: white;
-  height: 40vh;
+  height: 350px;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   background-position: center;
-  display: flex;
-  justify-content: space-around;
-  position:relative;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+
+
+  h1 {
+    font-size: 50px;
+    bottom: 71px;
+  }
+  h2 {
+    font-size: 28px;
+    bottom: 40px;
+    margin-top: -15px;
+    margin-bottom: -10px;
+  }
+  h3 {
+
+    bottom: 17px;
+    font-size: 20px;
+  }
+}
+
+.fa-map-marker-alt:before {
+  color: $brand-success;
 }
 
 .banner-content-listing-show {
-  position: absolute;
-  left: 20px;
-  text-shadow: 2px 2px 5px #333;
-  h1 {
-    font-size: 40px;
-  }
-  h3 {
-    font-size: 25px;
-}
-}
-
-.banner-content-listing-button {
-  width: 40%;
-  position: absolute;
-  bottom: -20px;
   text-align: center;
-
+  text-shadow: 2px 2px 5px #333;
+  position: relative;
+  margin-top: 78px;
 }
 
-.banner-content-listing-button .socksup-primary {
-  width: 100%;
+.btn-pin {
+  position: absolute;
+  left: 33px;
+  bottom: -75px;
+}
+
+.btn-success {
+  max-width: 281.25px;
 }
 
 .banner-content-listing-city {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
   text-shadow: 2px 2px 5px #333;
 }
 
@@ -60,15 +69,15 @@
 .listing-show-job-dates {
   width: 60%;
   &span {
-  display: inline-block;
-}
+    display: inline-block;
+  }
 }
 
 .listing-show-job-description {
   justify-content: center;
   h4 {
-  text-align: center;
-}
+    text-align: center;
+  }
   p {
     text-align: center;
     margin: 0 auto;
