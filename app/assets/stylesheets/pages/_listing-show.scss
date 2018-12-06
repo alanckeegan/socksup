@@ -7,14 +7,14 @@
   display: flex;
   justify-content: space-around;
   position:relative;
-   background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .banner-content-listing-show {
   position: absolute;
   left: 20px;
+  text-shadow: 2px 2px 5px #333;
   h1 {
     font-size: 40px;
   }
@@ -39,11 +39,12 @@
   position: absolute;
   right: 20px;
   bottom: 20px;
+  text-shadow: 2px 2px 5px #333;
 }
 
 
 .listing-show-job-info {
-  margin-top: 50px;
+  margin-top: 70px;
   position: relative;
   display: flex;
   align-items: center;
@@ -91,7 +92,7 @@
 
 #map {
   width: 100vw !important;
-
+  margin-bottom: 150px;
 }
 
 

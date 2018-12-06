@@ -1,27 +1,28 @@
 
 <div class="inbox-container"></div>
   <div class="inbox">
+    <h4><strong>Applications</strong></h4>
     <p><%@user.submissions.each do |s|%></p>
     <div class="inbox-card">
       <div class="inbox-info">
-        <div class="big">
-          <%= "#{s.user.first_name}"%>
-        </div>
-        <div class="small">
-          <%= "#{s.user.last_name}"%>
-        </div>
       </div>
       <div class="inbox-info">
         <div class="big">
-          <%= "#{s.listing.employer.name}" %>
+          <%= "#{s.listing.title}"%>
         </div>
         <div class="small">
-          <%= "#{s.listing.start_date.strftime("%B %d, %Y")} - #{s.listing.start_date.strftime("%B %d, %Y")}" %>
+          <strong><%= "#{s.listing.employer.name}"%></strong>
+        </div>
+        <div class="small">
+          <%= "#{s.listing.start_date.strftime("%d, %m, %Y")}" %>
+        </div>
+        <div class="small">
+          <%= "#{s.listing.end_date.strftime("%d, %m, %Y")}" %>
         </div>
       </div>
       <div class="inbox-info">
         <% if s.responses.count < s.listing.quiz.questions.count %>
-          Incomplete,
+          Incomplete
         <% elsif s.submitted.nil? %>
           <%= link_to "Submit", submit_path(s), method: :patch, class: "btn btn-primary", id: "submit-button", remote: :true %>
         <% elsif s.confirmed == true%>

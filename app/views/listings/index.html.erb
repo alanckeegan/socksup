@@ -3,8 +3,8 @@
     <div class="col-xs-12">
       <div class="search-bar">
         <%= simple_form_for :query, :url => listings_path, method: "get" do |f| %>
-        <%= f.input :city, as: :string, required: true, placeholder:'Location', label: false, class: "form-control", input_html: {value: params[:query][:city]}, input_html: { class: 'form-input'}  %>
-        <%= f.input :title, as: :string, required: true, placeholder:'Job Type', label: false, class: "form-control", input_html: {value: params[:query][:title]}, input_html: { class: 'form-input'} %>
+        <%= f.input :city, as: :string, required: true, placeholder:'Location', label: false, class: "form-control form-input", input_html: {value: params[:query][:city]} %>
+        <%= f.input :title, as: :string, required: true, placeholder:'Job Type', label: false, class: "form-control form-input", input_html: {value: params[:query][:title]} %>
           <%= f.button :submit, "Filter", class: "btn btn-success socksup-secondary socksup-btn-small pull-right" %>
       </div>
       <% end %>

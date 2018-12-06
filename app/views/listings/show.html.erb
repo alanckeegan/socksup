@@ -1,10 +1,10 @@
-<div class="banner-listing-show" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('<%= @listing.photo %>');">
+<div class="banner-listing-show" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url('<%= @listing.photo %>');">
   <div class="banner-content-listing-show">
     <h1><%= @listing.title %></h1>
     <h3><%= @listing.employer.name %></h3>
   </div>
   <div class="banner-content-listing-button">
-    <%= link_to 'Pass the quiz', listing_submissions_path(@listing), method: :post, class: "btn btn-success socksup-primary" %>
+    <%= link_to 'Take the quiz', listing_submissions_path(@listing), method: :post, class: "btn btn-success socksup-primary" %>
   </div>
   <div class="banner-content-listing-city">
     <h3><%= @listing.employer.city %></h3>
@@ -23,7 +23,7 @@
   <hr id="job-info-hr">
   <div class="listing-show-job-description">
     <h4>About this job</h4>
-    <p><%= @listing.description %> <br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas optio a reprehenderit, animi sint dolor quia eveniet quaerat quidem ab, nulla laboriosam! Qui, odit perferendis explicabo incidunt delectus error reiciendis? </p>
+    <p><%= @listing.description %></p>
   </div>
 </div>
 
@@ -38,7 +38,7 @@
 </div>
 <div class="box-address-over-map">
   <p><strong>Address</strong></p>
-  <p><%= @listing.employer.address %> 56 carrer del something</p>
+  <p><%= @listing.employer.address %>, <%= @listing.employer.city %></p>
 </div>
 </div>
 
