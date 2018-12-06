@@ -1,0 +1,76 @@
+.completed-dot {
+  height: 25px;
+  width: 25px;
+  background: radial-gradient(ellipse at center, #23C7BD, #11605B);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.incomplete-dot{
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.progress-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.progress-bar{
+ width: 334px;
+ display: flex;
+ background-color: white;
+ justify-content: space-around;
+ box-shadow: none;
+ height: 30px;
+ align-items: center;
+}
+
+.inline input {
+  display: none;
+}
+
+#question-form{
+  text-align: center;
+  padding: 15px;
+}
+.inline {
+    background-color: white;
+    border: 2px solid $brand-green;
+    margin: 10px auto;
+    text-align: center;
+    height: 80px;
+    border-radius: 30px;
+    max-width: 400px;
+
+}
+.text-field{
+  text-align: left;
+  width: 100%;
+  height: 85px;
+}
+
+.inline label {
+  padding-top: 25px;
+  height: 100%;
+  width: 100%;
+  border-radius: 26px;
+  &.active {
+    background-color: $brand-green;
+    color: white;
+  }
+}
+
+.quiz-button {
+  margin: 10px;
+}
+
+.question {
+  margin-bottom: 35px;
+  margin-top: 10px;
+  text-align: center;
+}
+
