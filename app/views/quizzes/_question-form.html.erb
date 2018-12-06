@@ -8,12 +8,12 @@
   <% if question.question_type == 'multiple_choice' %>
   <% option_array = question.wrong_answers %>
   <% option_array.push(question.correct_answer) %>
-  <%= f.input_field :content, as: :radio_buttons, collection: option_array. shuffle, :item_wrapper_class => 'inline'
+  <%= f.input_field :content, as: :radio_buttons, :required => true, collection: option_array. shuffle, :item_wrapper_class => 'inline'
   %>
   <% else %>
   <!-- Show text entry -->
   <div>
-      <%= f.input_field :content, placeholder: 'Your answer', class: "text-field form-input"%>
+      <%= f.input_field :content, placeholder: 'Your answer', :required => true, class: "text-field form-input"%>
   </div>
   <% end %>
   <%= f.submit "Next", class:"btn btn-success socksup-primary quiz-button", id: "submit-button" %>
