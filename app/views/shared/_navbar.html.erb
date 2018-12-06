@@ -1,7 +1,7 @@
 <div class="navbar-socksup navbar-static-top <% if @transparent_navbar %>navbar_transparent <% end %>">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-socksup-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+  <%= image_tag "logo.png", height: 50 %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -9,37 +9,55 @@
 
     <% if user_signed_in? %>
 
-      <!-- Links when logged in -->
-      <%= link_to "Profile", user_path(current_user), class: "navbar-socksup-item navbar-socksup-link" %>
+    <!-- Links when logged in -->
+    <%= link_to "Profile", user_path(current_user), class: "navbar-socksup-item navbar-socksup-link" %>
 
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-socksup-item">
-        <div class="dropdown">
-          <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-socksup-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-socksup-dropdown-menu">
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
+    <!-- Avatar with dropdown menu -->
+    <div class="navbar-socksup-item">
+      <div class="dropdown">
+        <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-socksup-menu", "data-toggle" => "dropdown" %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-socksup-dropdown-menu">
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+            <% end %>
+          </li>
+        </ul>
       </div>
+    </div>
 
     <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Log in"), new_user_session_path, class: "navbar-socksup-item navbar-socksup-link" %>
-      <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path, class: "navbar-socksup-item navbar-socksup-link" %>
+    <!-- Login link (when logged out) -->
+    <%= link_to t(".sign_in", default: "Log in"), new_user_session_path, class: "navbar-socksup-item navbar-socksup-link" %>
+    <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path, class: "navbar-socksup-item navbar-socksup-link" %>
     <% end %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-socksup-item hidden-md hidden-lg">
+
+    <% if user_signed_in? %>
+
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-socksup-dropdown-menu">
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Log out</a></li>
+        <li><%= link_to "Profile", user_path(current_user), class: "navbar-socksup-item navbar-socksup-link" %></li>
+        <li><%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %></li>
+        </ul>
+        <% end %>
+      </div>
+
+      <% else %>
+
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-socksup-dropdown-menu">
+          <li><%= link_to t(".sign_in", default: "Log in"), new_user_session_path, class: "navbar-socksup-item navbar-socksup-link" %>
+          </li>
+          <li><%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path, class: "navbar-socksup-item navbar-socksup-link" %></li>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>
