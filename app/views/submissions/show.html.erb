@@ -1,14 +1,16 @@
-
-<h1>Here are your responses!</h1>
-
-<% @submission.responses.each do |r| %>
-
-<h3><%= r.question.question %></h3>
-<h3><%= r.content %></h3>
-
-<% end %>
-
-<%= button_to "Submit", submit_path(@submission), method: :patch, class: "btn btn-success socksup-primary", id: "submit-button", remote: :true, "data-toggle" => "modal", "data-target" => "#confirmSubmission" %>
+<div class="container" id="response-page">
+  <h2 class="main-heading text-center">Here are your responses!</h2>
+  <div class="responses">
+      <% @submission.responses.each do |r| %>
+    <div class="response">
+      <h4><%= r.question.question %></h4>
+      <h5><%= r.content %></h5>
+      <hr>
+    </div>
+    <% end %>
+  </div>
+  <%= button_to "Submit application", submit_path(@submission), method: :patch, class: "btn btn-success socksup-primary response-button", id: "submit-button", remote: :true, "data-toggle" => "modal", "data-target" => "#confirmSubmission" %>
+</div>
 
 
 <div class="modal fade" id="confirmSubmission" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

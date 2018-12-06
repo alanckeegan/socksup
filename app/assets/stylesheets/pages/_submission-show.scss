@@ -1,0 +1,24 @@
+.response {
+  border-top: 6px solid $brand-green;
+  border-radius: 2px;
+  word-wrap: break-word;
+  background-color: rgba(73, 171, 158, 0.050);
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 375px;
+}
+
+.responses {
+  margin-top: 10px;
+}
+
+#response-page {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
