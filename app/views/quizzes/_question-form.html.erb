@@ -1,22 +1,36 @@
- <div id="question-form">
+
   <%= simple_form_for([submission, Response.new], remote: true) do |f| %>
   <!-- Make a simple form -->
   <!-- question for form -->
-  <div class="question">
+
     <p class="text-center"><strong> <%= question.question %></strong></p>
-  </div>
+
+    <% completed_questions = question.quiz.questions.index(question)  %>
+    <% incomplete_questions =  question.quiz.questions.count - completed_questions%>
+
+
   <% if question.question_type == 'multiple_choice' %>
   <% option_array = question.wrong_answers %>
   <% option_array.push(question.correct_answer) %>
-  <%= f.input_field :content, as: :radio_buttons, collection: option_array. shuffle, :item_wrapper_class => 'inline'
+  <%= f.input_field :content, as: :radio_buttons, :required => true, collection: option_array. shuffle, :item_wrapper_class => 'inline'
   %>
   <% else %>
   <!-- Show text entry -->
   <div>
-      <%= f.input_field :content, placeholder: 'Your answer', class: "text-field form-input"%>
+    <%= f.input_field :content, placeholder: 'Your answer', :required => true, class: "text-field form-input"%>
   </div>
   <% end %>
+  <div class="progress-flex">
+    <div class="progress-bar" >
+      <% completed_questions.times do %>
+      <span class="completed-dot"></span>
+      <% end %>
+      <% incomplete_questions.times do %>
+      <span class="incomplete-dot"></span>
+      <% end %>
+    </div>
+  </div>
   <%= f.submit "Next", class:"btn btn-success socksup-primary quiz-button", id: "submit-button" %>
   <%= f.input :question_id, as: :hidden, :input_html => { value: question.id } %>
   <% end %>
-</div>
+

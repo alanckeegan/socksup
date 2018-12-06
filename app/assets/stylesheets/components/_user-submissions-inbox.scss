@@ -4,6 +4,9 @@
   h4 {
     text-align: center;
   }
+  hr {
+    border-color: $brand-success;
+  }
 }
 
 .inbox{
@@ -15,11 +18,13 @@
 
   .inbox-card{
     display:grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 3fr 1fr;
     text-align: center;
     align-items: center;
     padding:15px;
     border-left: 5px solid $brand-success;
+    background-color: rgba(73, 171, 158, 0.050);
+    border-radius: 5px;
 
     .inbox-info{
       font-size: 18px;

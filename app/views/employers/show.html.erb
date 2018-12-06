@@ -1,1 +1,16 @@
-<%= @employer.name %>
+<div class="banner-profile" style="background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,0.8435749299719888) 0%, rgba(8,116,113,0.8491771708683473) 33%, rgba(215,255,0,0.41780462184873945) 100%);">
+  <div class="banner-content-profile">
+    <h3><%= @employer.name %></h3>
+    <%= image_tag @employer.photo, class: "profile-picture" %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3><%= @employer.address %>, <%= @employer.city %></h3>
+      <p><%= @employer.description %></p>
+    </div>
+  </div>
+</div>

@@ -7,12 +7,9 @@
       <h5><%= r.content %></h5>
       <hr>
     </div>
-
     <% end %>
   </div>
-
-
-  <%= button_to "Submit quiz", submit_path(@submission), method: :patch, class: "btn btn-success socksup-primary response-button", id: "submit-button", remote: :true, "data-toggle" => "modal", "data-target" => "#confirmSubmission" %>
+  <%= button_to "Submit application", submit_path(@submission), method: :patch, class: "btn btn-success socksup-primary response-button", id: "submit-button", remote: :true, "data-toggle" => "modal", "data-target" => "#confirmSubmission" %>
 </div>
 
 
@@ -20,18 +17,20 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5  id="exampleModalCenterTitle">Congrats!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h5  id="exampleModalCenterTitle">Congratulations!</h5>
       </div>
       <div class="modal-body">
-        <%= "You've successfully submitted your quiz to be a #{@submission.listing.title.downcase} at #{@submission.listing.employer.name}" %>
+        <%= "You've successfully submitted your quiz to be a #{@submission.listing.title.downcase}.\n #{@submission.listing.employer.name} will review your application and their contact details will be available to you if your application is approved." %>
       </div>
-      <div class="modal-footer ">
-        <%= link_to 'Look for More Jobs', listings_path, class: "btn btn-success socksup-primary" %>
-        <%= link_to 'See My Applications', user_path(@submission.user), class: "btn btn-success socksup-secondary" %>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div>
+        <div class="modal-footer ">
+          <div class="modal-button">
+            <%= link_to 'Look for More Jobs', listings_path, class: "btn btn-success socksup-primary" %>
+          </div>
+          <div class="modal-button">
+            <%= link_to 'See My Applications', user_path(@submission.user), class: "btn btn-success socksup-secondary" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
