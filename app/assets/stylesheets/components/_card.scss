@@ -2,11 +2,12 @@
   background-size: cover !important;
   background-position: center;
   height: 167px;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   max-width: 400px;
   margin: 10px 0;
-  box-shadow: 5px 5px 15px rgba(150,150,150,0.7);
-  border-top: 5px solid $brand-green;
+  box-shadow: 3px 3px 15px rgba(150,150,150,0.3);
+  border-top: 8px solid $brand-green;
 }
 
 .card h2 {
@@ -26,7 +27,7 @@
 }
 
 .info {
-  background: rgba(black, 0.5);
+  background: rgba(black, 0.7);
   position: relative;
   top: 95px;
   height: 55px;

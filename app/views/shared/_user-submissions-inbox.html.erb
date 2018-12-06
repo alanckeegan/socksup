@@ -21,10 +21,10 @@
       <div class="inbox-info">
         <% if s.responses.count < s.listing.quiz.questions.count %>
           Incomplete
-        <% elsif s.confirmed == true%>
-          Accepted! (button)
         <% elsif s.confirmed.nil?%>
            <p>Awaiting Response</p>
+        <% elsif s.confirmed == true%>
+          <p>Accepted!</p>
         <% else s.confirmed == false%>
           <p style="color: red;">Not this time :(</p>
         <% end %>
