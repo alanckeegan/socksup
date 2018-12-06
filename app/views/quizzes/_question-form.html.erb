@@ -11,9 +11,10 @@
   <div class="progress-flex">
     <div class="progress-bar" >
       <% completed_questions.times do %>
-      <span class="completed-dot"></span>
+      <span class="completed-dot"><i class="fas fa-check"></i></span>
       <% end %>
-      <% incomplete_questions.times do %>
+      <span class="on-dot"></span>
+      <% (incomplete_questions-1).times do %>
       <span class="incomplete-dot"></span>
       <% end %>
     </div>

@@ -16,6 +16,14 @@
   display: inline-block;
 }
 
+.on-dot{
+  height: 18px;
+  width: 18px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
 .progress-flex {
   display: flex;
   justify-content: center;
@@ -79,8 +87,11 @@
 }
 
 .question {
-  margin-bottom: 35px;
   margin-top: 10px;
   text-align: center;
+}
+
+#actual-question{
+  margin: 0px;
 }
 
