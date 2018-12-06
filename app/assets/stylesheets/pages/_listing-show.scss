@@ -7,9 +7,8 @@
   display: flex;
   justify-content: space-around;
   position:relative;
-   background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .banner-content-listing-show {
@@ -45,7 +44,7 @@
 
 
 .listing-show-job-info {
-  margin-top: 50px;
+  margin-top: 70px;
   position: relative;
   display: flex;
   align-items: center;
@@ -93,7 +92,7 @@
 
 #map {
   width: 100vw !important;
-
+  margin-bottom: 150px;
 }
 
 
