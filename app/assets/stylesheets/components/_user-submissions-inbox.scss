@@ -1,12 +1,15 @@
 .inbox-container{
   width: 100%;
   padding: 20px;
+  h4 {
+    text-align: center;
+  }
 }
 
 .inbox{
   background-color: white;
   border-radius: 0px 10px 10px 0px;
-  padding-top: 25px;
+  padding-top: 50px;
   margin: 0px;
 
 
@@ -16,6 +19,7 @@
     text-align: center;
     align-items: center;
     padding:15px;
+    border-left: 5px solid $brand-success;
 
     .inbox-info{
       font-size: 18px;
