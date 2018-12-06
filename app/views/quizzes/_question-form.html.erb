@@ -14,7 +14,7 @@
     <%= f.input_field :content, class: "text-field"%>
   </div>
   <% end %>
-  <%= f.submit "Submit Answer!", class:"btn btn-success socksup-primary quiz-button" %>
+  <%= f.submit "Submit Answer!", class:"btn btn-success socksup-primary quiz-button", id: "submit-button" %>
   <%= f.input :question_id, as: :hidden, :input_html => { value: question.id } %>
   <% end %>
 </div>

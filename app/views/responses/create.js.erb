@@ -24,13 +24,18 @@ function resetForm(formHTML) {
   form.innerHTML = formHTML;
 };
 
-<% if @response.question == @response.question.quiz.questions.last %>
-  resetForm('<%= link_to "View and Confirm", submission_path(@response.submission)%>')
-<%else%>
-  resetForm('<%= j render "quizzes/question-form", submission: @response.submission, question: @next_question %>');
-  setListeners();
-<% end %>
 
+resetForm('<%= j render "quizzes/question-form", submission: @response.submission, question: @next_question %>');
+  setListeners();
+
+
+<% if @next_question == @response.question.quiz.questions.last %>
+
+  const button = document.getElementById('submit-button');
+  button.insertAdjacentHTML('afterend', '<%= link_to "Finish Quiz", submission_path(@response.submission), class: "btn btn-success socksup-primary quiz-button" %>');
+  button.remove();
+
+<%end%>
 
 
 
