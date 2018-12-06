@@ -5,8 +5,6 @@
     <p><%@user.submissions.each do |s|%></p>
     <div class="inbox-card">
       <div class="inbox-info">
-      </div>
-      <div class="inbox-info">
         <div class="big">
           <%= "#{s.listing.title}"%>
         </div>
@@ -14,23 +12,21 @@
           <strong><%= "#{s.listing.employer.name}"%></strong>
         </div>
         <div class="small">
-          <%= "#{s.listing.start_date.strftime("%d, %m, %Y")}" %>
+          <%= "#{s.listing.start_date.strftime("%d.%m.%Y")}" %>
         </div>
         <div class="small">
-          <%= "#{s.listing.end_date.strftime("%d, %m, %Y")}" %>
+          <%= "#{s.listing.end_date.strftime("%d.%m.%Y")}" %>
         </div>
       </div>
       <div class="inbox-info">
         <% if s.responses.count < s.listing.quiz.questions.count %>
           Incomplete
-        <% elsif s.submitted.nil? %>
-          <%= link_to "Submit", submit_path(s), method: :patch, class: "btn btn-primary", id: "submit-button", remote: :true %>
         <% elsif s.confirmed == true%>
-            Accepted!
+          Accepted! (button)
         <% elsif s.confirmed.nil?%>
            <p>Awaiting Response</p>
         <% else s.confirmed == false%>
-          <p>REJECTED</p>
+          <p style="color: red;">Not this time :(</p>
         <% end %>
       </div>
     </div>
