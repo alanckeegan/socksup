@@ -17,9 +17,10 @@
       </div>
       <div class="inbox-info">
         <% if s.confirmed.nil?%>
-          <p>Awaiting Response</p>
+           <p>Awaiting Response</p>
         <% elsif s.confirmed == true%>
           <p>Accepted!</p>
+          <%= link_to "Contact", employer_path(s.listing.employer) %>
         <% else s.confirmed == false%>
           <p style="color: red;">They said no :(</p>
         <% end %>
