@@ -11,6 +11,7 @@
 
 <div class="listing-show-job-info">
   <%= link_to 'Take the quiz', listing_submissions_path(@listing), method: :post, class: "btn btn-success socksup-primary btn-pin" %>
+  <%= link_to "Back to Results", listings_path(:query =>{:city => session[:search]['city'], :title => session[:search]['title']}), class: "btn btn-success socksup-secondary" %>
   <div class="listing-show-job-dates">
     <span style="float: left;" id="start_date"><p><i class="fas fa-walking"></i> Start Date<br> <%= @listing.start_date.strftime("%d/%m/%Y")  %></p></span>
     <span style="float: right;"id="end_date"><p>End Date <i class="fas fa-walking"></i><br> <%= @listing.end_date.strftime("%d/%m/%Y")  %></p></span>
@@ -41,6 +42,7 @@
   <p><%= @listing.employer.address %>, <%= @listing.employer.city %></p>
 </div>
 </div>
+
 
 
 
