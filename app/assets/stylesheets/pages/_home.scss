@@ -1,16 +1,14 @@
 .banner {
   color: white;
   text-align: center;
-  height: 100vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  height: calc(100vh - 70px);
   background-size: cover !important;
   display: flex;
-  align-items: center;
   justify-content: center;
   background-position: center;
 }
 .banner-content {
-  margin-top: 300px;
+  margin-top: 195px;
   h1 {
   font-size: 28px;
   font-weight: bold;
@@ -20,7 +18,7 @@
   font-size: 18px;
   color: rgb(255, 255, 255);
   opacity: 0.9;
-  margin-bottom: 30px;
+  margin-bottom: 33px;
 }
 }
 
@@ -33,6 +31,7 @@
 }
 
 .home-form-city .form-control {
+  margin-bottom: 45px;
   color: white;
   display: block;
   width: 100%;

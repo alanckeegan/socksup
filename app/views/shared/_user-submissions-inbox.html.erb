@@ -1,7 +1,7 @@
 
 <div class="inbox-container"></div>
   <div class="inbox">
-    <h4><strong>Applications</strong></h4>
+    <h4>Applications</h4>
     <p><%@user.submissions.reverse.each do |s|%></p>
     <div class="inbox-card">
       <div class="inbox-info inbox-info-left">
@@ -24,7 +24,7 @@
           <p> <strong>Accepted!</strong></p>
           <%= link_to "Get in Touch", employer_path(s.listing.employer), class: "btn btn-success socksup-primary" %>
         <% else s.confirmed == false%>
-          <p style="color: red;">Not this time :(</p>
+          <p style="color: red;">They said no :(</p>
         <% end %>
       </div>
     </div>
