@@ -1,7 +1,4 @@
-<div class="banner-profile" style="background: #02AAB0;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #00CDAC, #02AAB0);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #00CDAC, #02AAB0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-">
+<div class="banner-profile" style="background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/4RUieTItxik2c5fvx/simple-animated-geometric-background-with-squares-4k-ultra-high-definition-video-loop_hzhlwak8x_thumbnail-full01.png')">
   <div class="banner-content-profile">
     <h3><%= current_user.first_name%> <%= current_user.last_name%></h3>
     <%= image_tag current_user.photo, class: "profile-picture" %>
@@ -11,3 +8,9 @@ background: linear-gradient(to right, #00CDAC, #02AAB0); /* W3C, IE 10+/ Edge, F
 <div class="inbox-container">
   <%= render 'shared/user-submissions-inbox' %>
 </div>
+
+<!-- This is the simple gradient background -->
+<!-- background: #02AAB0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #00CDAC, #02AAB0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #00CDAC, #02AAB0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ -->

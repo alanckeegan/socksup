@@ -19,7 +19,10 @@ alan = User.create!(first_name: "Alan", last_name: "Keegan", email: 'alan@socksu
 marina = User.create!(first_name: "Marina", last_name: "Kjaer", email: 'marina@socksup.co.uk', password: '123456', photo: 'https://avatars3.githubusercontent.com/u/38080513?v=4')
 
 puts 'Creating 2 employers...'
-linekers = Employer.create!(name: 'Linekers', city: 'Barcelona', description: 'Exciting club in the heart of aq busy city', address: 'Barrio Gotico', contact: 'linekers@socksup.co.uk', photo: 'https://images.unsplash.com/photo-1532452119098-a3650b3c46d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
+nvc = Employer.create!(name: 'NVC', city: 'Barcelona', description: 'A fun local bar which offers many drinks including cocktails and has a delicious pizza kitchen', address: '334 Carrer de Roger de Flor', contact: 'nvc@socksup.co.uk', photo: 'https://images.unsplash.com/photo-1532452119098-a3650b3c46d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
+sutton = Employer.create!(name: 'Sutton', city: 'Barcelona', description: 'Everyones favourite club', address: '16, Carrer de Tuset', contact: 'sutton@socksup.co.uk', photo: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
+sunsetgrill = Employer.create!(name: 'Sunset Grill',description: 'The open-sided eatery serves up high-quality grilled dishes with a stunning backdrop of the sun sinking into to Andaman Sea, all in a chic and romantic setting.', address: '16/12 Moo 6 Tambon Kamala',city: 'Phuket', contact: 'sunsetgrill@socksup.co.uk', photo: 'http://static.asiawebdirect.com/m/.imaging/1356x904/website/phuket/portals/phuket-com/homepage/phuket-magazine/top10-sunset-bars/allParagraphs/00/top10Set/03/image.jpg')
+smokehouse = Employer.create!(name: 'Smokehouse',description: 'Famous restaurant located on beautiful island', address: '15 Carrer de Lepant',city: 'Ibiza', contact: 'smokehouse@socksup.co.uk', photo: 'https://images.unsplash.com/photo-1522244451342-a41bf8a13d73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
 smokehouse = Employer.create!(name: 'Smokehouse',description: 'Famous restaurant located on beautiful island', address: '15 Carrer de Lepant',city: 'Ibiza', contact: 'smokehouse@socksup.co.uk', photo: 'https://images.unsplash.com/photo-1522244451342-a41bf8a13d73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
 
 puts 'Making 2 users employers...'
@@ -28,7 +31,8 @@ pierre.employer_id = linekers.id
 lucas.employer_id = smokehouse.id
 
 puts 'Creating quizzes....'
-linkersquiz = Quiz.create!()
+suttonquiz = Quiz.create!()
+nvcquiz = Quiz.create!()
 smokehousequiz = Quiz.create!()
 
 puts 'Creating questions...'
