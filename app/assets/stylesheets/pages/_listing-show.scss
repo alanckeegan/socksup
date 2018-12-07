@@ -27,7 +27,15 @@
 .brand-link{
   color: $brand-green;
   font-weight: bold;
+
+  &:active{
+    text-decoration: none;
+    opacity: .7;
+    color: $brand-green;
+  }
 }
+
+
 .fa-map-marker-alt:before {
   color: $brand-success;
 }
