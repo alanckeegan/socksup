@@ -6,8 +6,13 @@ class EmployersController < ApplicationController
   def create
     @employer = Employer.new(employer_params
     @employer.city = @employer.city.capitalize
-    # - make sure that the input of the city is capitalized when saved to the database so that the search comparision works!!!
+
+    if @employer.save
+      @current_user.employer = @employer
+    end
   end
+
+
 
   def show
     @employer = Employer.find(params[:id])
