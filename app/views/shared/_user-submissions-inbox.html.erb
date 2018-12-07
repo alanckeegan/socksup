@@ -17,10 +17,12 @@
       </div>
       <div class="inbox-info">
         <% if s.confirmed.nil?%>
-           <p>Awaiting Response</p>
+           <i class="far fa-clock"></i>
+           <p>Awaiting <br> Response</p>
         <% elsif s.confirmed == true%>
-          <p>Accepted!</p>
-          <%= link_to "Contact", employer_path(s.listing.employer) %>
+          <i class="fas fa-check"></i>
+          <p> <strong>Accepted!</strong></p>
+          <%= link_to "Get in Touch", employer_path(s.listing.employer), class: "btn btn-success socksup-primary" %>
         <% else s.confirmed == false%>
           <p style="color: red;">Not this time :(</p>
         <% end %>
