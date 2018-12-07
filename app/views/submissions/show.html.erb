@@ -9,7 +9,7 @@
     </div>
     <% end %>
   </div>
-  <%= button_to "Submit application", submit_path(@submission), method: :patch, class: "btn btn-success socksup-primary response-button", id: "submit-button", remote: :true, "data-toggle" => "modal", "data-target" => "#confirmSubmission", "data-backdrop"=> "static", "data-keyboard" => "false"%>
+  <%= button_to "Submit application", submit_path(@submission), method: :patch, class: "btn socksup-primary response-button", id: "submit-button", remote: :true, "data-toggle" => "modal", "data-target" => "#confirmSubmission", "data-backdrop"=> "static", "data-keyboard" => "false"%>
 </div>
 
 
@@ -25,10 +25,10 @@
       <div>
         <div class="modal-footer modal-center-text">
           <div class="modal-button">
-            <%= link_to 'Look for More Jobs', listings_path, class: "btn btn-success socksup-primary" %>
+            <%= link_to 'Look for More Jobs', listings_path, class: "btn socksup-primary" %>
           </div>
           <div class="modal-button">
-            <%= link_to 'See My Applications', user_path(@submission.user), class: "btn btn-success socksup-secondary" %>
+            <%= link_to 'See My Applications', user_path(@submission.user), class: "btn socksup-secondary" %>
           </div>
         </div>
       </div>
