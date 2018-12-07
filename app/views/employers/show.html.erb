@@ -1,23 +1,4 @@
-<!-- <div class="banner-profile" style="background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/4RUieTItxik2c5fvx/simple-animated-geometric-background-with-squares-4k-ultra-high-definition-video-loop_hzhlwak8x_thumbnail-full01.png')">
-  <div class="banner-content-profile">
-  <div class="banner-content-profile">
-    <h3><%#= @employer.name %></h3>
-    <%#= image_tag @employer.photo, class: "profile-picture" %>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h3><%= @employer.address %>, <%= @employer.city %></h3>
-      <p><%= @employer.description %></p>
-      <p><%= @employer.contact %></p>
-    </div>
-  </div>
-</div>
- -->
-
- <div class="banner-profile" style="background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/4RUieTItxik2c5fvx/simple-animated-geometric-background-with-squares-4k-ultra-high-definition-video-loop_hzhlwak8x_thumbnail-full01.png')">
+<div class="banner-profile" style="background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/4RUieTItxik2c5fvx/simple-animated-geometric-background-with-squares-4k-ultra-high-definition-video-loop_hzhlwak8x_thumbnail-full01.png')">
   <div class="banner-content-profile">
     <h3><%= @employer.name%></h3>
     <%= image_tag @employer.photo, class: "profile-picture" %>
@@ -28,10 +9,16 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h3><%= @employer.address %>, <%= @employer.city %></h3>
+        <h4 class="green">You've been accepted!</h4>
+        <h4 class="green">Contact us now</h4>
+        <i class="far fa-envelope"></i><p><%= @employer.contact %></p>
+        <hr width="50%">
+        <h4><%= @employer.address %>, <%= @employer.city %></h4>
+        <br>
         <p><%= @employer.description %></p>
-        <h4><%= @employer.contact %></h4>
+        <br>
       </div>
     </div>
   </div>
 </div>
+
