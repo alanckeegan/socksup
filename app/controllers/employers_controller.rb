@@ -1,16 +1,16 @@
 class EmployersController < ApplicationController
-  def new
-    @employer = Employer.new
-  end
+  # def new
+  #   @employer = Employer.new
+  # end
 
-  def create
-    @employer = Employer.new(employer_params
-    @employer.city = @employer.city.capitalize
+  # def create
+  #   @employer = Employer.new(employer_params
+  #   @employer.city = @employer.city.capitalize
 
-    if @employer.save
-      @current_user.employer = @employer
-    end
-  end
+  #   if @employer.save
+  #     @current_user.employer = @employer
+  #   end
+  # end
 
 
 
