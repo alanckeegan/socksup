@@ -1,10 +1,10 @@
 <div class="container" id="response-page">
-  <h2 class="main-heading text-center">Here are your responses!</h2>
+  <h3 class="main-heading text-center">Here are your responses!</h3>
   <div class="responses">
       <% @submission.responses.each do |r| %>
     <div class="response">
       <h4><%= r.question.question %></h4>
-      <h5><%= r.content %></h5>
+      <p><%= r.content %></p>
       <hr>
     </div>
     <% end %>
