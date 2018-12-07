@@ -32,7 +32,7 @@
     <%= f.input_field :content, placeholder: 'Your answer', :required => true, class: "text-field form-input"%>
   </div>
   <% end %>
-  <%= f.submit "Next", class:"btn socksup-primary quiz-button", id: "submit-button" %>
+  <%= f.submit "Next", class:"btn btn-success socksup-primary quiz-button", id: "submit-button" %>
   <%= f.input :question_id, as: :hidden, :input_html => { value: question.id } %>
   <% end %>
 

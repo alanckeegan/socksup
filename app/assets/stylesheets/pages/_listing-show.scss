@@ -44,8 +44,10 @@
 
 .btn-success {
   max-width: 281.25px;
-  margin-bottom: -110px;
-  width: auto;
+  .downshift{
+    margin-bottom: -110px;
+  }
+
 }
 
 .banner-content-listing-city {

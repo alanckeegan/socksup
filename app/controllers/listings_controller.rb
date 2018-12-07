@@ -23,4 +23,6 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
     @markers = [{ lng: @listing.employer.longitude, lat: @listing.employer.latitude }]
   end
+
+
 end
