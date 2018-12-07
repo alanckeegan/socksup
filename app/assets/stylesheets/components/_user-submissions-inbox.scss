@@ -19,7 +19,6 @@
     text-align: left;
   }
 
-
   .inbox-card{
     display:grid;
     grid-template-columns: 1fr 1fr;
@@ -42,6 +41,10 @@
       .small{
         font-size: 14px;
         margin-bottom: 2%;
+      }
+
+      #accepted{
+        margin-bottom: 8px;
       }
     }
   }
