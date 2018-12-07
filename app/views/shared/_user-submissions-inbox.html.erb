@@ -1,7 +1,7 @@
 
 <div class="inbox-container"></div>
   <div class="inbox">
-    <h4><strong>Applications</strong></h4>
+    <h4>Applications</h4>
     <p><%@user.submissions.reverse.each do |s|%></p>
     <div class="inbox-card">
       <div class="inbox-info inbox-info-left">
@@ -16,14 +16,12 @@
         </div>
       </div>
       <div class="inbox-info">
-        <% if s.responses.count < s.listing.quiz.questions.count %>
-          Incomplete
-        <% elsif s.confirmed.nil?%>
-           <p>Awaiting Response</p>
+        <% if s.confirmed.nil?%>
+          <p>Awaiting Response</p>
         <% elsif s.confirmed == true%>
           <p>Accepted!</p>
         <% else s.confirmed == false%>
-          <p style="color: red;">Not this time :(</p>
+          <p style="color: red;">They said no :(</p>
         <% end %>
       </div>
     </div>
