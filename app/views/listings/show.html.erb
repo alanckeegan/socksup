@@ -15,8 +15,10 @@
     <span style="float: left;" id="start_date"><p><i class="fas fa-walking"></i> Start Date<br> <%= @listing.start_date.strftime("%d/%m/%Y")  %></p></span>
     <span style="float: right;"id="end_date"><p>End Date <i class="fas fa-walking"></i><br> <%= @listing.end_date.strftime("%d/%m/%Y")  %></p></span>
   </div>
-  <div class="listing-show-job-hours">
+  <div class="listing-show-job-hours text-center">
     <p>Hours per week: <%= @listing.hours_per_week %> <i class="far fa-clock"></i></p>
+    <p>Pay per hour: <%= "£#{@listing.pay_per_hour}" %> </i></p>
+
   </div>
   <hr id="job-info-hr">
   <div class="listing-show-job-description">
