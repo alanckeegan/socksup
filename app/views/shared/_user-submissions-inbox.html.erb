@@ -4,18 +4,15 @@
     <h4><strong>Applications</strong></h4>
     <p><%@user.submissions.each do |s|%></p>
     <div class="inbox-card">
-      <div class="inbox-info">
+      <div class="inbox-info inbox-info-left">
         <div class="big">
           <%= "#{s.listing.title}"%>
         </div>
         <div class="small">
+          <%= "#{s.listing.start_date.strftime("%d %b %y")} - #{s.listing.end_date.strftime("%d %b %y")}" %>
+        </div>
+        <div class="small">
           <strong><%= "#{s.listing.employer.name}"%></strong>
-        </div>
-        <div class="small">
-          <%= "#{s.listing.start_date.strftime("%d.%m.%Y")}" %>
-        </div>
-        <div class="small">
-          <%= "#{s.listing.end_date.strftime("%d.%m.%Y")}" %>
         </div>
       </div>
       <div class="inbox-info">
