@@ -3,7 +3,7 @@
   justify-content: space-around;
   align-items: center;
   color: white;
-  height: 350px;
+  height: 40vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   background-position: center;
@@ -34,21 +34,16 @@
   text-align: center;
   text-shadow: 2px 2px 5px #333;
   position: relative;
-  margin-top: 78px;
+  margin-top: 30px;
 }
 
 .btn-pin {
-  left: 33px;
-  bottom: -75px;
-  text-shadow: none;
-}
-
-.btn-success {
-  max-width: 281.25px;
-  .downshift{
-    margin-bottom: -110px;
-  }
-
+    left: 33px;
+    bottom: -75px;
+    text-shadow: none;
+    max-width: 281.25px;
+    margin-top: -91px;
+    margin-bottom: 50px;
 }
 
 .banner-content-listing-city {

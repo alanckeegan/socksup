@@ -4,13 +4,13 @@
     <h2><%= @listing.employer.name %></h2>
     <h3><i class="fas fa-map-marker-alt"></i>
 <%= @listing.employer.city %></h3>
- <%= link_to 'Take the quiz', listing_submissions_path(@listing), method: :post, class: "btn btn-success socksup-primary btn-pin", style: "margin-bottom:-110px;" %>
   </div>
 </div>
 
 
 
 <div class="listing-show-job-info">
+  <%= link_to 'Take the quiz', listing_submissions_path(@listing), method: :post, class: "btn btn-success socksup-primary btn-pin" %>
   <div class="listing-show-job-dates">
     <span style="float: left;" id="start_date"><p><i class="fas fa-walking"></i> Start Date<br> <%= @listing.start_date.strftime("%d/%m/%Y")  %></p></span>
     <span style="float: right;"id="end_date"><p>End Date <i class="fas fa-walking"></i><br> <%= @listing.end_date.strftime("%d/%m/%Y")  %></p></span>
