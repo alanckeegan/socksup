@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_085105) do
+ActiveRecord::Schema.define(version: 2018_12_10_101739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,13 +45,11 @@ ActiveRecord::Schema.define(version: 2018_12_10_085105) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.bigint "submission_id_id"
-    t.bigint "user_id_id"
     t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["submission_id_id"], name: "index_messages_on_submission_id_id"
-    t.index ["user_id_id"], name: "index_messages_on_user_id_id"
+    t.bigint "user_id"
+    t.bigint "submission_id"
+    t.index ["submission_id"], name: "index_messages_on_submission_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -112,6 +110,8 @@ ActiveRecord::Schema.define(version: 2018_12_10_085105) do
 
   add_foreign_key "listings", "employers"
   add_foreign_key "listings", "quizzes"
+  add_foreign_key "messages", "submissions"
+  add_foreign_key "messages", "users"
   add_foreign_key "questions", "quizzes"
   add_foreign_key "responses", "questions"
   add_foreign_key "responses", "submissions"
