@@ -22,8 +22,9 @@
     <script>
       App['submission_<%=@submission.id%>'] = App.cable.subscriptions.create({ channel: 'SubmissionsChannel', submission_id: <%= @submission.id %> }, {received: (data) => {
         const chat = document.querySelector('.chat');
-        chat.insertAdjacentHTML('beforeend', data.message_partial)
-
+        chat.insertAdjacentHTML('beforeend', data.message_partial);
+        const input = document.getElementById('message_content');
+        input.value = '';
       }
     })
     </script>
