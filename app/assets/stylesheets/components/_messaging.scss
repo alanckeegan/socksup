@@ -1,15 +1,43 @@
 .message{
   display:flex;
+  position: relative;
+  min-height: 50px;
+  padding: 10px;
+  align-items: center;
 
-  .inbound{
-
-  }
 
 }
 
- .outbound{
-    text-align: right;
-  }
+.inbound{
+  position: absolute;
+  left: 0px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 30px;
+  text-decoration: none;
+  padding: 8px;
+  text-align: left;
+  color: white;
+  background-color: $brand-green;
+
+}
+
+.outbound{
+  position:absolute;
+  right: 0px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 0px;
+  text-decoration: none;
+  text-align: right;
+  padding: 8px;
+
+  background-color: transparent;
+  border: 2px solid $brand-green;
+  color: $brand-green;
+}
 
 .form-box-chat {
   display: flex;

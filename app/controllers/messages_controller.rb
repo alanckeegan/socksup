@@ -1,10 +1,11 @@
 class MessagesController < ApplicationController
   def create
     @message = Message.new
-    @message.user = User.find(current_user.id)
+    @message.user = current_user
     @message.submission = Submission.find(params[:submission_id])
     @message.content = params[:message][:content]
     if @message.save
+
       redirect_to submission_messages_path(@message.submission)
     end
   end
