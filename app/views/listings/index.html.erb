@@ -1,5 +1,4 @@
 <div class="container">
-
         <%= simple_form_for :query, :url => listings_path, method: "get" do |f| %>
       <div class="search-bar">
           <div class="field">
@@ -14,6 +13,13 @@
 
       </div>
       <% end %>
+
+
+<% if @listings.count == 0 %>
+
+<p><strong>Oops, no jobs with your research criteria. <br> Try to change your criteria ☺️</strong></p>
+
+<% else %>
 
   <div class="row">
     <% @listings.each do |listing| %>
@@ -30,6 +36,7 @@
           </div>
         <% end %>
       </div>
+    <% end %>
     <% end %>
   </div>
 </div>
