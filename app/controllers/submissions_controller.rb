@@ -17,5 +17,18 @@ class SubmissionsController < ApplicationController
     @submission.save
   end
 
+  def confirm
+    @submission = Submission.find(params[:id])
+    @submission.confirmed = true
+    @submission.save
+    redirect_to user_path(current_user)
+  end
+
+  def reject
+    @submission = Submission.find(params[:id])
+    @submission.confirmed = false
+    @submission.save
+    redirect_to user_path(current_user)
+  end
 
 end
