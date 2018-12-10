@@ -5,8 +5,13 @@ class MessagesController < ApplicationController
     @message.submission = Submission.find(params[:submission_id])
     @message.content = params[:message][:content]
     if @message.save
-
-      redirect_to submission_messages_path(@message.submission)
+      ActionCable.server.broadcast("submission_#{@message.submission.id}", {
+        message_partial: render(partial: 'messages/message', locals: {m: @message})
+      })
+      # respond_to do |format|
+      #   format.html { redirect_to submission_messages_path(@message.submission) }
+      #   format.js
+      # end
     end
   end
 

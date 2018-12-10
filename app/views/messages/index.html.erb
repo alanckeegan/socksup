@@ -1,30 +1,30 @@
 <div class="container">
   <div class="chat">
       <% @messages.each do |m| %>
-      <div class="message">
-        <% if m.user == current_user %>
-          <div class = "outbound">
-            <%= m.content %>
-          </div>
-        <% else %>
-          <div class="inbound">
-            <%= m.content %>
-          </div>
-        <% end %>
-        </div>
+      <%= render "message", m: m %>
       <% end %>
     </div>
   </div>
     <div class="enter-message">
-       <%= simple_form_for [@submission, Message.new] do |f|%>
+       <%= simple_form_for [@submission, Message.new],  remote: true  do |f|%>
           <div class="form-box-chat">
             <div>
               <%= f.input :content, :placeholder => "Message", label: false, input_html: { class: 'message-input'}%>
             </div>
             <div>
-              <%= f.submit "Send", class:"btn btn-primary socksup-secondary chat-button" %>
+              <%= f.submit "Send", class:"btn btn-primary socksup-secondary chat-button"%>
               </div>
           </div>
         <% end %>
-
     </div>
+
+    <% content_for :after_js do %>
+    <script>
+      App['submission_<%=@submission.id%>'] = App.cable.subscriptions.create({ channel: 'SubmissionsChannel', submission_id: <%= @submission.id %> }, {received: (data) => {
+        const chat = document.querySelector('.chat');
+        chat.insertAdjacentHTML('beforeend', data.message_partial)
+
+      }
+    })
+    </script>
+    <% end %>
