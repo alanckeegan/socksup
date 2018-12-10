@@ -1,16 +1,18 @@
 <div class="container">
   <div class="chat">
-    <div class="conversation">
+
       <% @messages.each do |m| %>
-        <% if m.user = current_user %>
+      <div class="message">
+        <% if m.user == current_user %>
           <div class = "outbound">
             <%= m.content %>
           </div>
         <% else %>
           <div class="inbound">
-            <% m.content %>
+            <%= m.content %>
           </div>
         <% end %>
+        </div>
       <% end %>
     </div>
     <div class="enter-message">
@@ -24,6 +26,6 @@
               </div>
           </div>
         <% end %>
-      </div>
+
     </div>
   </div>
