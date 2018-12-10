@@ -1,44 +1,47 @@
+<!-- Banner picture  -->
 <div class="banner-listing-show" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url('<%= @listing.photo %>');">
   <div class="banner-content-listing-show">
     <h1><%= @listing.title %></h1>
     <h2><%= @listing.employer.name %></h2>
-    <h3><i class="fas fa-map-marker-alt"></i>
-<%= @listing.employer.city %></h3>
+    <h3><i class="fas fa-map-marker-alt"></i><%= @listing.employer.city %></h3>
   </div>
 </div>
 
+<!-- Information displayed underneath banner picture -->
 <div class="listing-show-job-info">
   <%= link_to 'Take the quiz', listing_submissions_path(@listing), method: :post, class: "btn btn-success socksup-primary btn-pin" %>
+  <!-- Links back to results page persisting the filters added before changing to show page -->
   <%= link_to "Back to Results", listings_path(:query =>{:city => session[:search]['city'], :title => session[:search]['title']}), class: "brand-link" %>
   <div class="listing-show-job-dates">
     <span style="float: left;" id="start_date"><p><i class="fas fa-walking"></i> Start Date<br> <%= @listing.start_date.strftime("%d/%m/%Y")  %></p></span>
-    <span style="float: right;"id="end_date"><p>End Date <i class="fas fa-walking"></i><br> <%= @listing.end_date.strftime("%d/%m/%Y")  %></p></span>
+     <span style="float: right;"id="end_date"><p>End Date <i class="fas fa-walking"></i><br> <%= @listing.end_date.strftime("%d/%m/%Y")  %></p></span>
   </div>
   <div class="listing-show-job-hours text-center">
     <p>Hours per week: <%= @listing.hours_per_week %> <i class="far fa-clock"></i></p>
     <p>Pay per hour: <%= "£#{@listing.pay_per_hour}" %> </i></p>
 
   </div>
-  <hr id="job-info-hr">
+    <hr id="job-info-hr">
   <div class="listing-show-job-description">
     <h4>About this job</h4>
     <p><%= @listing.description %></p>
   </div>
 </div>
 
+<!-- Displays a map with a marker on the location of the employer -->
 <div class="horizontal">
-  <div
-  id="map"
-  style="width: 75%;
-  height: 400px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  >
-</div>
-<div class="box-address-over-map">
-  <p><strong>Address</strong></p>
-  <p><%= @listing.employer.address %>, <%= @listing.employer.city %></p>
-</div>
+    <div
+    id="map"
+    style="width: 75%;
+    height: 400px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    >
+  </div>
+  <div class="box-address-over-map">
+    <p><strong>Address</strong></p>
+    <p><%= @listing.employer.address %>, <%= @listing.employer.city %></p>
+  </div>
 </div>
 
 
