@@ -18,6 +18,7 @@ end
 resources :submissions, only: [:show] do
   # resources :quizzes, only: [:show]
   resources :responses, only: [:index, :new, :create]
+  resources :messages, only:[:index, :create]
 end
 
 get 'quizzes/:quiz_id/submissions/:id', to: 'quizzes#show', as: :take_quiz

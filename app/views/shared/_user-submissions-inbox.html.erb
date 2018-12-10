@@ -22,7 +22,8 @@
         <% elsif s.confirmed == true%>
           <i class="fas fa-check"></i>
           <p id="accepted"> <strong>Accepted!</strong></p>
-          <%= link_to "Get in Touch", employer_path(s.listing.employer), class: "btn btn-success socksup-primary small" %>
+          <%= link_to "Employer Info", employer_path(s.listing.employer), class: "btn btn-success socksup-primary small" %>
+          <%= link_to "Messages", submission_messages_path(s), class: "btn btn-success socksup-primary small" %>
         <% else s.confirmed == false%>
           <p style="color: red;">They said no :(</p>
         <% end %>
