@@ -2,6 +2,13 @@
 <div class="inbox-container"></div>
   <div class="inbox">
     <h4>Applications</h4>
+    <% if @user.submissions.count == 0 %>
+    <div class="inbox-card">
+    <p><strong>You did not apply for any job yet</strong></p>
+    <%= link_to "Search a job now", listings_path, class: "btn btn-success socksup-primary no-apply"%>
+  </div>
+    <% else %>
+
     <p><%@user.submissions.reverse.each do |s|%></p>
     <div class="inbox-card">
       <div class="inbox-info inbox-info-left">
@@ -30,6 +37,7 @@
       </div>
     </div>
         <hr width="50%">
+    <% end %>
     <% end %>
   </div>
 </div>
