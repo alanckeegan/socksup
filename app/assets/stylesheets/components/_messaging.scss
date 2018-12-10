@@ -5,8 +5,38 @@
 
   }
 
-  .outbound{
+}
+
+ .outbound{
     text-align: right;
   }
+
+.form-box-chat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message-input {
+  border: 2px solid white;
+  border-bottom: 2px solid #22C6BC;
+  box-shadow: none;
+  vertical-align: text-bottom;
+  height: 40px;
+  width: 255px;
+}
+
+.chat-button {
+  width: 100%
+}
+
+.chat {
+  position: relative;
+  height: 100vh;
+}
+
+.enter-message {
+  position: fixed;
+  bottom: 0;
 }
 
