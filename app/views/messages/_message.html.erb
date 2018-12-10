@@ -1,0 +1,11 @@
+<div class="message">
+  <% if m.user == current_user %>
+  <div class = "outbound">
+    <%= m.content %>
+  </div>
+  <% else %>
+  <div class="inbound">
+    <%= m.content %>
+  </div>
+  <% end %>
+</div>
