@@ -8,6 +8,4 @@ class Listing < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :hours_per_week, presence: true
-
-
 end
