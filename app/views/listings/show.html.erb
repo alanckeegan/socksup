@@ -7,8 +7,6 @@
   </div>
 </div>
 
-
-<% raise %>
 <div class="listing-show-job-info">
   <%= link_to 'Take the quiz', listing_submissions_path(@listing), method: :post, class: "btn btn-success socksup-primary btn-pin" %>
   <%= link_to "Back to Results", listings_path(:query =>{:city => session[:search]['city'], :title => session[:search]['title']}), class: "brand-link" %>
