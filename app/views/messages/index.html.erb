@@ -22,7 +22,7 @@
               <%= f.input :content, :placeholder => "Message", label: false, input_html: { class: 'message-input'}%>
             </div>
             <div>
-              <%= f.submit "Send", class:"btn btn-primary socksup-secondary chat-button" %>
+              <%= f.submit "Send", class:"btn btn-primary socksup-secondary chat-button", remote: true %>
               </div>
           </div>
         <% end %>
