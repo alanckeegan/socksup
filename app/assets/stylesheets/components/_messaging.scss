@@ -43,15 +43,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .message-input {
   border: 2px solid white;
+  border-radius: 10px;
   border-bottom: 2px solid #22C6BC;
   box-shadow: none;
-  vertical-align: text-bottom;
-  height: 40px;
+  align-items: center;
+  height: 30px;
   width: 255px;
+  margin-right: 5px;
+}
+
+.enter-message .form-group{
+  margin: 0px !important;
 }
 
 .chat-button {
@@ -59,12 +66,18 @@
 }
 
 .chat {
-  position: relative;
-  height: 100vh;
+  height: 76vh;
+  overflow: scroll;
 }
 
 .enter-message {
+  display: flex;
   position: fixed;
   bottom: 0;
+  width: 100%;
+  border-top: 6px solid $brand-green;
+  justify-content: space-around;
+  padding: 5px;
+  align-items: center;
 }
 
