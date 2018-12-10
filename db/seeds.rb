@@ -12,9 +12,7 @@ Quiz.destroy_all
 Employer.destroy_all
 User.destroy_all
 
-puts 'Creating 4 users...'
-pierre = User.create!(first_name: "Pierre", last_name: "Herve-Bazin", email: 'pierre@socksup.co.uk', password: '123456', photo: 'https://avatars2.githubusercontent.com/u/42039881?v=4')
-lucas = User.create!(first_name: "Lucas", last_name: "Rocha", email: 'lucas@socksup.co.uk', password: '123456', photo: 'https://avatars1.githubusercontent.com/u/42940098?v=4')
+puts 'Creating 2 users...'
 alan = User.create!(first_name: "Alan", last_name: "Keegan", email: 'alan@socksup.co.uk', password: '123456', photo: 'https://avatars2.githubusercontent.com/u/41964244?v=4')
 marina = User.create!(first_name: "Marina", last_name: "Kjaer", email: 'marina@socksup.co.uk', password: '123456', photo: 'https://avatars3.githubusercontent.com/u/38080513?v=4')
 
@@ -27,10 +25,9 @@ zabloskis = Employer.create!(name: 'Zabloskis',description: 'Airy, old-school jo
 cheztonton = Employer.create!(name: 'Chez Ton Ton',description: 'Airy, old-school joint luring locals with a chill vibe, happy-hour deals, billiards & pinball.', address: '16 Place Saint-Pierre',city: 'Toulouse', contact: 'cheztonton@socksup.co.uk', photo: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
 bipbip = Employer.create!(name: 'Bip Bip Bar',description: 'A very informal, popular bar where famous local musicians play choro & samba music.', address: 'R. Alm. Goncalves, 50 - Loja D - Copacabana',city: 'Rio de Janeiro', contact: 'bipbipbar@socksup.co.uk', photo: 'https://images.unsplash.com/photo-1485872299829-c673f5194813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1082&q=80')
 
-puts 'Making 2 users employers...'
-
-pierre.employer_id = nvc.id
-lucas.employer_id = sutton.id
+puts 'Creating 2 employer users'
+pierre = User.create!(first_name: "Pierre", last_name: "Herve-Bazin", email: 'pierre@socksup.co.uk', password: '123456', photo: 'https://avatars2.githubusercontent.com/u/42039881?v=4', employer_id: sutton.id)
+lucas = User.create!(first_name: "Lucas", last_name: "Rocha", email: 'lucas@socksup.co.uk', password: '123456', photo: 'https://avatars1.githubusercontent.com/u/42940098?v=4', employer_id: nvc.id)
 
 puts 'Creating quizzes....'
 suttonquiz = Quiz.create!()
