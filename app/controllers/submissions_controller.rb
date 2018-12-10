@@ -17,6 +17,5 @@ class SubmissionsController < ApplicationController
     @submission.save
   end
 
-  private
 
 end

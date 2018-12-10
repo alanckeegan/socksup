@@ -5,8 +5,14 @@
   </div>
 </div>
 
+
+
 <div class="inbox-container">
+  <% if  @user.employer %>
+  <%= render 'shared/employer-listings-inbox' %>
+  <% else %>
   <%= render 'shared/user-submissions-inbox' %>
+  <% end %>
 </div>
 
 <!-- This is the simple gradient background -->
