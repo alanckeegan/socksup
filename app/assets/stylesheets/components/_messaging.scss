@@ -1,15 +1,11 @@
 .message{
-  display:flex;
-  position: relative;
-  min-height: 50px;
-  padding: 10px;
-  align-items: center;
+  display: flex;
+  padding: 3px 0px;
 
 
 }
 
 .inbound{
-  position: absolute;
   left: 0px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -20,11 +16,13 @@
   text-align: left;
   color: white;
   background-color: $brand-green;
+  max-width: 80%;
+  word-wrap: break-word;
+
 
 }
 
 .outbound{
-  position:absolute;
   right: 0px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -32,11 +30,14 @@
   border-bottom-right-radius: 0px;
   text-decoration: none;
   text-align: right;
+  margin-left: auto;
   padding: 8px;
-
+  max-width: 80%;
+  word-wrap: break-word;
   background-color: transparent;
   border: 2px solid $brand-green;
   color: $brand-green;
+
 }
 
 .form-box-chat {
