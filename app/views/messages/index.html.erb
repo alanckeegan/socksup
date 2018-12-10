@@ -1,0 +1,23 @@
+<% @messages.each do |m| %>
+  <% if m.user = current_user %>
+    <div class = "outbound">
+      <%= m.content %>
+    </div>
+  <% else %>
+    <div class="inbound">
+      <% m.content %>
+    </div>
+  <% end %>
+<% end %>
+
+
+ <%= simple_form_for [@submission, Message.new] do |f|%>
+    <div class="form-box">
+      <div class="form-inputs">
+        <%= f.input :content, :label => "Message", input_html: { class: 'form-input'} %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, class:"btn btn-primary button-size" %>
+        </div>
+    </div>
+  <% end %>
