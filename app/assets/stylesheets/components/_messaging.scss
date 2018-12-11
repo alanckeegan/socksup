@@ -5,6 +5,12 @@
 
 }
 
+.a{
+  &.active{
+    text-decoration:none;
+  }
+}
+
 .contact-information{
   position:sticky;
   top: 0;
@@ -20,6 +26,20 @@
   border-right: 1px solid #e7e7e7;
   border-left:1px solid #e7e7e7;
   text-align: center;
+  text-decoration: none;
+
+  .h4{
+    text-decoration:none;
+  }
+  &.active{
+    text-decoration:none;
+  }
+  .a{
+    text-decoration:none;
+    &.active{
+      text-decoration:none;
+    }
+  }
 
 }
 
