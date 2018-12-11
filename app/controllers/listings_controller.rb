@@ -17,6 +17,8 @@ class ListingsController < ApplicationController
 
     @listings = @listings.joins(:employer).where(employers: {city: @city.capitalize}) unless @city == "" || @city == nil
     @listings = @listings.where("title ILIKE ?", "%#{@title}%") unless @title == "" || @title == nil
+
+    @all_listings = Listing.all
     session[:search] = params[:query]
   end
 

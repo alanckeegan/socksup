@@ -11,9 +11,6 @@ class EmployersController < ApplicationController
   #     @current_user.employer = @employer
   #   end
   # end
-
-
-
   def show
     @employer = Employer.find(params[:id])
   end

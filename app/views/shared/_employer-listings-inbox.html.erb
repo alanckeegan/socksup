@@ -1,14 +1,13 @@
 
 <div class="inbox-container"></div>
   <div class="inbox">
-    <h4>Applications</h4>
+    <h4>Applicants</h4>
     <p><%@inbound_submissions.each do |s|%></p>
     <div class="inbox-card">
       <div class="inbox-info inbox-info-left">
-        <div class="big">
-          <%= "#{s.user.first_name} #{s.user.last_name}"%>
-        </div>
-        <div class="small">
+        <%= image_tag s.user.photo, class: "profile-picture-inbox" %>
+          <p class="applicant-name"><%= "#{s.user.first_name} #{s.user.last_name}"%></p>
+        <div class="small listing-title-position">
           <%= "#{s.listing.title}" %>
         </div>
       </div>
@@ -16,11 +15,11 @@
         <% if s.confirmed.nil?%>
            <i class="far fa-clock"></i>
            <p>Awaiting <br> Response</p>
-           <%= link_to "View Submission",submission_path(s), class: "btn btn-success socksup-primary small" %>
+           <%= link_to "View Application",submission_path(s), class: "btn btn-success socksup-primary small response-button" %>
         <% elsif s.confirmed == true%>
           <i class="fas fa-check"></i>
           <p id="accepted"> <strong>Accepted!</strong></p>
-          <%= link_to "Messages", submission_messages_path(s), class: "btn btn-success socksup-primary small" %>
+          <%= link_to "Messages", submission_messages_path(s), class: "btn btn-success socksup-primary small response-button" %>
         <% else s.confirmed == false%>
           <p style="color: red;">Rejected</p>
         <% end %>
