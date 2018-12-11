@@ -15,7 +15,7 @@ resources :listings, only: [:index,:show] do
   resources :submissions, only: [:create]
 end
 
-resources :submissions, only: [:show] do
+resources :submissions, only: [:show, :destroy] do
   # resources :quizzes, only: [:show]
   resources :responses, only: [:index, :new, :create]
   resources :messages, only:[:index, :create]
