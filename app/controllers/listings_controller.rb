@@ -27,5 +27,22 @@ class ListingsController < ApplicationController
     @markers = [{ lng: @listing.employer.longitude, lat: @listing.employer.latitude }]
   end
 
+  def create
+    @listing = Listing.new(listing_params)
+    @employer = Employer.find(params[:employer_id])
+    @listing.employer = current_user.employer
+    @listing.save
+    redirect_to new_question_path
+  end
 
+  def new
+    @listing = Listing.new
+    @employer = Employer.find(params[:employer_id])
+  end
+
+  private
+
+  def listing_params
+    params.require(:listing).permit(:title, :start_date, :end_date, :hours_per_week, :pay_per_hour)
+  end
 end

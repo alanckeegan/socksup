@@ -1,0 +1,18 @@
+<div>
+  <div>
+    <h1>Create a new job offer</h1>
+  </div>
+  <div>
+    <div>
+      <p>Add the informations about your job offer</p>
+      <%= simple_form_for @listing, url: employer_listings_path(@employer, @listing) do |l| %>
+      <%= l.input :title %>
+      <%= l.input :start_date %>
+      <%= l.input :end_date %>
+      <%= l.input :hours_per_week %>
+      <%= l.input :pay_per_hour %>
+      <%= l.button :submit, class: "btn btn-success socksup-primary small" %>
+      <% end %>
+    </div>
+  </div>
+</div>
