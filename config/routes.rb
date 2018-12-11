@@ -26,3 +26,5 @@ patch 'submissions/:id/submit', to: 'submissions#submit', as: :submit
 patch 'submissions/:id/confirm', to: 'submissions#confirm', as: :confirm
 patch 'submissions/:id/reject', to: 'submissions#reject', as: :reject
 end
+
+mount ActionCable.server => "/cable"
