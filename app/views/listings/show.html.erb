@@ -41,6 +41,10 @@
 </div>
 </div>
 
+<% content_for :meta_title, "#{@listing.title} job opportunity available on #{DEFAULT_META["SocksUp"]}" %>
+<% content_for :meta_description, @listing.description %>
+<% content_for :meta_image, @listing.photo %>
+
 
 
 
