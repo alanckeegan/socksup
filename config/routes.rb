@@ -25,6 +25,6 @@ get 'quizzes/:quiz_id/submissions/:id', to: 'quizzes#show', as: :take_quiz
 patch 'submissions/:id/submit', to: 'submissions#submit', as: :submit
 patch 'submissions/:id/confirm', to: 'submissions#confirm', as: :confirm
 patch 'submissions/:id/reject', to: 'submissions#reject', as: :reject
+mount ActionCable.server => "/cable"
 end
 
-mount ActionCable.server => "/cable"
