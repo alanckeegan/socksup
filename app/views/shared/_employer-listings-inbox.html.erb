@@ -1,10 +1,11 @@
 
 <div class="inbox-container"></div>
   <div class="inbox">
-    <h4>Applications</h4>
+    <h4>Applicants</h4>
     <p><%@inbound_submissions.each do |s|%></p>
     <div class="inbox-card">
       <div class="inbox-info inbox-info-left">
+        <%= image_tag s.user.photo, class: "profile-picture-inbox" %>
         <div class="big">
           <%= "#{s.user.first_name} #{s.user.last_name}"%>
         </div>
