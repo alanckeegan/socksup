@@ -13,9 +13,12 @@ Quiz.destroy_all
 User.destroy_all
 Employer.destroy_all
 
-puts 'Creating 2 users...'
+puts 'Creating 4 users...'
 alan = User.create!(first_name: "Alan", last_name: "Keegan", email: 'alan@socksup.co.uk', password: '123456', photo: 'https://avatars2.githubusercontent.com/u/41964244?v=4')
 marina = User.create!(first_name: "Marina", last_name: "Kjaer", email: 'marina@socksup.co.uk', password: '123456', photo: 'https://avatars3.githubusercontent.com/u/38080513?v=4')
+annie = User.create!(first_name: "Annie", last_name: "Gilchirst", email: 'annie@socksup.co.uk', password: '123456', photo: 'https://avatars3.githubusercontent.com/u/42188961?v=4')
+jascha = User.create!(first_name: "Jascha", last_name: "Drel", email: 'jascha@socksup.co.uk', password: '123456', photo: 'https://avatars3.githubusercontent.com/u/42733581?v=4')
+
 
 puts 'Creating 5 employers...'
 nvc = Employer.create!(name: 'NVC', city: 'Barcelona', description: 'A fun local bar which offers many drinks including cocktails and has a delicious pizza kitchen and a pool table', address: '334 Carrer de Roger de Flor', contact: 'nvc@socksup.co.uk', photo: 'https://images.unsplash.com/photo-1532452119098-a3650b3c46d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
@@ -60,7 +63,7 @@ waiternvc = Listing.create!(title: 'Waiter',hours_per_week: 20, pay_per_hour: 9,
 baristanvc = Listing.create!(title: 'Barista',hours_per_week: 15, pay_per_hour: 8, start_date: '01-06-2019'.to_datetime, end_date: '31-08-2019'.to_datetime, description: 'We are looking for reliable, personable, well presented barrista for our cosy bar which prides itsef in serving local coding bootcamp students. Casual flexible position.',  employer_id: nvc.id, quiz_id: nvcquiz.id, photo: 'https://images.unsplash.com/photo-1507226983735-a838615193b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')
 pizzanvc = Listing.create!(title: 'Pizza Chef',hours_per_week: 30, pay_per_hour: 8, start_date: '01-06-2019'.to_datetime, end_date: '31-08-2019'.to_datetime, description: 'We are looking for reliable, personable, well presented waiting bartenders for our cosy bar which prides itsef in serving local coding bootcamp students. Casual flexible position.',  employer_id: nvc.id, quiz_id: nvcquiz.id, photo: 'https://images.unsplash.com/photo-1511516412963-801b050c92aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
 babysittersunset = Listing.create!(title: 'Babysitter',hours_per_week: 20, pay_per_hour: 10, start_date: '01-06-2019'.to_datetime, end_date: '31-08-2019'.to_datetime, description: 'We are looking for reliable, personable, well presented babysitter to look after our local coding bootcamp students after their long days of coding, their brians have minimal funcionality. Casual flexible position.',  employer_id: sunsetgrill.id, quiz_id: sunsetgrillquiz.id, photo: 'https://images.unsplash.com/photo-1489760176169-fd3d32805239?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')
-headbarsutton. = Listing.create!(title: 'Head Barman',hours_per_week: 30, pay_per_hour: 12, start_date: '01-06-2019'.to_datetime, end_date: '01-08-2019'.to_datetime, description: 'We are looking for reliable, personable, well presented head bartender for our amazing club which prides itsef in telling local coding bootcamp students they are not dressed well enough to enter. Casual flexible position.',  employer_id: sutton.id, quiz_id: suttonquiz.id, photo: 'https://www.shaker-uk.com/wp-content/uploads/2015/10/IMG_8591.jpg')
+headbarsutton = Listing.create!(title: 'Head Barman',hours_per_week: 30, pay_per_hour: 12, start_date: '01-06-2019'.to_datetime, end_date: '01-08-2019'.to_datetime, description: 'We are looking for reliable, personable, well presented head bartender for our amazing club which prides itsef in telling local coding bootcamp students they are not dressed well enough to enter. Casual flexible position.',  employer_id: sutton.id, quiz_id: suttonquiz.id, photo: 'https://www.shaker-uk.com/wp-content/uploads/2015/10/IMG_8591.jpg')
 barbacksunset = Listing.create!(title: 'Bar back',hours_per_week: 35, pay_per_hour: 7, start_date: '01-05-2019'.to_datetime, end_date: '31-08-2019'.to_datetime, description: 'We are looking for reliable, personable, well presented hostess for our amazing club which prides itsef in telling local coding bootcamp students they are not dressed well enough to enter. Casual flexible position.',  employer_id: sunsetgrill.id, quiz_id: sunsetgrillquiz.id, photo: 'https://s3.us-east-2.amazonaws.com/tales-prod-mediabucket-1w7ck12fqo2qd/assets/images/2016/3/Qi8JAOxzBcG5_660x0_mtdhGWCw.jpg')
 bartendernvc = Listing.create!(title: 'Bartender',hours_per_week: 20, pay_per_hour: 8, start_date: '05-07-2019'.to_datetime, end_date: '05-08-2019'.to_datetime, description: 'We are looking for reliable, personable, well presented waiting bartenders for our cosy bar which prides itsef in serving local coding bootcamp students. Casual flexible position.',  employer_id: nvc.id, quiz_id: nvcquiz.id, photo: 'http://libertador.edu.pe/wp-content/uploads/2015/05/1.jpg')
 barbacksutton = Listing.create!(title: 'Bar back',hours_per_week: 25, pay_per_hour: 7, start_date: '01-06-2019'.to_datetime, end_date: '31-07-2019'.to_datetime, description: 'We are looking for reliable, personable, well presented barback for our amazing club which prides itsef in telling local coding bootcamp students they are not dressed well enough to enter. Casual flexible position.',  employer_id: sutton.id, quiz_id: suttonquiz.id, photo: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80')
@@ -68,12 +71,16 @@ cocktailsunset = Listing.create!(title: 'Bar/Cocktail Master',hours_per_week: 35
 bartendersunset = Listing.create!(title: 'Bartender',hours_per_week: 35, pay_per_hour: 9, start_date: '01-05-2019'.to_datetime, end_date: '31-08-2019'.to_datetime, description: 'We are looking for reliable, personable, well presented bartender for our amazing restuarant which prides itsef in serving local coding bootcamp students delicious cocktails. Casual flexible position.',  employer_id: sunsetgrill.id, quiz_id: sunsetgrillquiz.id, photo: 'http://static.asiawebdirect.com/m/.imaging/1356x904/website/phuket/portals/phuket-com/homepage/phuket-magazine/top10-sunset-bars/allParagraphs/00/top10Set/03/image.jpg')
 barmaidsutton = Listing.create!(title: 'Bar Maid',hours_per_week: 25, pay_per_hour: 11, start_date: '15-06-2019'.to_datetime, end_date: '15-08-2019'.to_datetime, description: 'We are looking for reliable, personable, well presented waiting bartenders for our amazing club which prides itsef in telling local coding bootcamp students they are not dressed well enough to enter. Casual flexible position.',  employer_id: sutton.id, quiz_id: suttonquiz.id, photo: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
 
-puts 'Creating 4 submissions for ...'
+puts 'Creating 8 submissions ...'
 
 Submission.create!(user_id: marina.id, listing_id: hostesssutton.id, submitted: true)
-Submission.create!(user_id: marina.id, listing_id: bartendernvc.id, submitted: true)
+Submission.create!(user_id: annie.id, listing_id: hostesssutton.id, submitted: true)
 Submission.create!(user_id: alan.id, listing_id: headbarsutton.id, submitted: true)
+Submission.create!(user_id: jascha.id, listing_id: headbarsutton.id, submitted: true)
+Submission.create!(user_id: marina.id, listing_id: bartendernvc.id, submitted: true)
+Submission.create!(user_id: jascha.id, listing_id: bartendernvc.id, submitted: true)
 Submission.create!(user_id: alan.id, listing_id: bartendernvc.id, submitted: true)
+Submission.create!(user_id: annie.id, listing_id: bartendernvc.id, submitted: true)
 
 
 puts 'Finished!'

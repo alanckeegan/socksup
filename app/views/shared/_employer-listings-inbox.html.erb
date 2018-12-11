@@ -6,9 +6,7 @@
     <div class="inbox-card">
       <div class="inbox-info inbox-info-left">
         <%= image_tag s.user.photo, class: "profile-picture-inbox" %>
-        <div class="big">
-          <%= "#{s.user.first_name} #{s.user.last_name}"%>
-        </div>
+          <p><%= "#{s.user.first_name} #{s.user.last_name}"%></p>
         <div class="small">
           <%= "#{s.listing.title}" %>
         </div>
@@ -17,7 +15,7 @@
         <% if s.confirmed.nil?%>
            <i class="far fa-clock"></i>
            <p>Awaiting <br> Response</p>
-           <%= link_to "View Submission",submission_path(s), class: "btn btn-success socksup-primary small" %>
+           <%= link_to "View Application",submission_path(s), class: "btn btn-success socksup-primary small" %>
         <% elsif s.confirmed == true%>
           <i class="fas fa-check"></i>
           <p id="accepted"> <strong>Accepted!</strong></p>
