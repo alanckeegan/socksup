@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
     @message.content = params[:message][:content]
     if @message.save
       ActionCable.server.broadcast("submission_#{@message.submission.id}", {
-        message_partial: render(partial: 'messages/message', locals: {m: @message})
+        message_partial: render(partial: 'messages/message', locals: { m: @message, user_is_messages_author: false })
       })
 
       respond_to do |format|

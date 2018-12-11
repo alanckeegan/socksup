@@ -1,5 +1,5 @@
 <div class="message">
-  <% if m.user == current_user %>
+  <% if user_is_message_author %>
   <div class = "outbound">
     <%= m.content %>
   </div>
@@ -9,3 +9,7 @@
   </div>
   <% end %>
 </div>
+<!--
+<div class="message">
+  <div class="<%#= user_is_messages_author ? "outbound" : "inbound" %>"><%= m.content %></div>
+</div> -->
