@@ -1,5 +1,9 @@
 <div class="container" id="response-page">
+  <% if current_user.employer %>
+  <h3 class="main-heading text-center"><%= @submission.user.first_name %>'s  responses!</h3>
+  <% else %>
   <h3 class="main-heading text-center">Here are your responses!</h3>
+  <% end %>
   <div class="responses">
       <% @submission.responses.each do |r| %>
     <div class="response">
