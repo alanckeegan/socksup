@@ -14,7 +14,7 @@
  <% end %>
  <% @messages.each do |m| %>
 
- <%= render "message", m: m , user_is_messages_author: (m.user == current_user)%>
+ <%= render "message", m: m , user_is_messages_author: (m.user == current_user), :class => "brand-link" %>
  <% end %>
 </div>
 
