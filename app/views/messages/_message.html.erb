@@ -3,7 +3,13 @@
   <div class = "outbound">
     <%= m.content %>
   </div>
+
+    <%= image_tag m.submission.listing.employer.photo, class: 'message-avatar-top'  %>
+
   <% else %>
+
+
+
   <div class="inbound">
     <%= m.content %>
   </div>

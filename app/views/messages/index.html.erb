@@ -1,5 +1,12 @@
 <div class="container">
   <div class="chat">
+    <div class="contact-information">
+         <% if current_user.employer %>
+          <h3 class="text-center" ><%= "#{@submission.user.first_name} #{@submission.user.last_name}"%><span><%= image_tag @submission.user.photo, class: 'message-avatar-top'  %></span></h3>
+        <% else %>
+          <h3 class="text-center"><%= @submission.listing.employer.name%><span><%= image_tag @submission.listing.employer.photo, class: 'message-avatar-top'  %></span></h3>
+        <% end %>
+      </div>
       <% @messages.each do |m| %>
 
       <%= render "message", m: m , user_is_messages_author: (m.user == current_user)%>
