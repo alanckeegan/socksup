@@ -15,8 +15,10 @@
   </div>
 
   <% if current_user.employer == @submission.listing.employer %>
-  <%= button_to "Accept", confirm_path(@submission), method: :patch, class: "btn btn-success socksup-primary response-button", id: "submit-button" %>
-  <%= button_to "Reject", reject_path(@submission), method: :patch, class: "btn btn-success socksup-primary response-button", id: "submit-button" %>
+  <div class="accept-reject-buttons">
+    <%= button_to "Accept", confirm_path(@submission), method: :patch, class: "btn btn-success socksup-primary response-button", id: "submit-button" %>
+    <%= button_to "Reject", reject_path(@submission), method: :patch, class: "btn btn-success socksup-primary response-button", id: "submit-button" %>
+  </div>
 
 
   <% elsif @submission.user == current_user%>
