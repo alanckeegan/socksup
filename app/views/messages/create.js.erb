@@ -6,4 +6,5 @@ chat.insertAdjacentHTML('beforeend', "<%=j render 'message',  m: @message, user_
 const input = document.getElementById('message_content');
 input.value = '';
 input.blur();
+scrollLastMessageIntoView()
 })()
