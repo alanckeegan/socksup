@@ -6,8 +6,8 @@
     <div class="inbox-card">
       <div class="inbox-info inbox-info-left">
         <%= image_tag s.user.photo, class: "profile-picture-inbox" %>
-          <p><%= "#{s.user.first_name} #{s.user.last_name}"%></p>
-        <div class="small">
+          <p class="applicant-name"><%= "#{s.user.first_name} #{s.user.last_name}"%></p>
+        <div class="small listing-title-position">
           <%= "#{s.listing.title}" %>
         </div>
       </div>
@@ -15,11 +15,11 @@
         <% if s.confirmed.nil?%>
            <i class="far fa-clock"></i>
            <p>Awaiting <br> Response</p>
-           <%= link_to "View Application",submission_path(s), class: "btn btn-success socksup-primary small" %>
+           <%= link_to "View Application",submission_path(s), class: "btn btn-success socksup-primary small response-button" %>
         <% elsif s.confirmed == true%>
           <i class="fas fa-check"></i>
           <p id="accepted"> <strong>Accepted!</strong></p>
-          <%= link_to "Messages", submission_messages_path(s), class: "btn btn-success socksup-primary small" %>
+          <%= link_to "Messages", submission_messages_path(s), class: "btn btn-success socksup-primary small response-button" %>
         <% else s.confirmed == false%>
           <p style="color: red;">Rejected</p>
         <% end %>
