@@ -1,45 +1,54 @@
-<div class="container">
+
   <div class="chat">
     <div class="contact-information">
-         <% if current_user.employer %>
-          <h3 class="text-center" ><%= "#{@submission.user.first_name} #{@submission.user.last_name}"%><span><%= image_tag @submission.user.photo, class: 'message-avatar-top'  %></span></h3>
-        <% else %>
-          <h3 class="text-center"><%= @submission.listing.employer.name%><span><%= image_tag @submission.listing.employer.photo, class: 'message-avatar-top'  %></span></h3>
-        <% end %>
+     <% if current_user.employer %>
+      <div>
+      <%= image_tag @submission.user.photo, class: 'message-avatar-top' %>
       </div>
-      <% @messages.each do |m| %>
+     <h4 class="text-center" ><%= "#{@submission.user.first_name} #{@submission.user.last_name}"%>
 
-      <%= render "message", m: m , user_is_messages_author: (m.user == current_user)%>
-      <% end %>
-    </div>
+      </h4>
+     <% else %>
+        <div>
+      <%= image_tag @submission.listing.employer.photo, class: 'message-avatar-top' %>
+      </div>
+     <h4 class="text-center" ><%=@submission.listing.employer.name%>
+      </h4>
+     <% end %>
+   </div>
+   <% @messages.each do |m| %>
+
+   <%= render "message", m: m , user_is_messages_author: (m.user == current_user)%>
+   <% end %>
+ </div>
+
+<div class="enter-message">
+ <%= simple_form_for [@submission, Message.new],  remote: true  do |f|%>
+ <div class="form-box-chat">
+  <div>
+    <%= f.input :content, :placeholder => "Message", label: false, input_html: { class: 'message-input'}%>
   </div>
-    <div class="enter-message">
-       <%= simple_form_for [@submission, Message.new],  remote: true  do |f|%>
-          <div class="form-box-chat">
-            <div>
-              <%= f.input :content, :placeholder => "Message", label: false, input_html: { class: 'message-input'}%>
-            </div>
-            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-            <div>
-              <%= f.submit "Send", class:"btn btn-primary socksup-secondary chat-button"%>
-              </div>
-          </div>
-        <% end %>
-    </div>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <div>
+    <%= f.submit "Send", class:"btn btn-primary socksup-primary chat-button"%>
+  </div>
+</div>
+<% end %>
+</div>
 
-    <% content_for :after_js do %>
-    <script>
-    scrollLastMessageIntoView()
+<% content_for :after_js do %>
+<script>
+  scrollLastMessageIntoView()
 
-      App['submission_<%=@submission.id%>'] = App.cable.subscriptions.create({ channel: 'SubmissionsChannel', submission_id: <%= @submission.id %> },
-        {
-        received: (data) => {
-        if (data.current_user_id !== <%= current_user.id %>){
+  App['submission_<%=@submission.id%>'] = App.cable.subscriptions.create({ channel: 'SubmissionsChannel', submission_id: <%= @submission.id %> },
+  {
+    received: (data) => {
+      if (data.current_user_id !== <%= current_user.id %>){
         const chat = document.querySelector('.chat');
         chat.insertAdjacentHTML('beforeend', data.message_partial);
         scrollLastMessageIntoView()
-        }
       }
-    })
-    </script>
-    <% end %>
+    }
+  })
+</script>
+<% end %>

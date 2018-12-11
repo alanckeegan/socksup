@@ -5,8 +5,26 @@
 
 }
 
+.contact-information{
+  position:sticky;
+  top: 0;
+  margin-left: 20%;
+  color: $brand-green;
+  z-index: 1;
+  padding: 5px;
+  background-color: white;
+  width: 60%;
+  border-bottom-right-radius: 40%;
+  border-bottom-left-radius: 40%;
+  border-bottom: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7;
+  border-left:1px solid #e7e7e7;
+  text-align: center;
+
+}
+
 .inbound{
-  left: 0px;
+  margin-left: 30px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   border-bottom-left-radius: 0px;
@@ -18,8 +36,6 @@
   background-color: $brand-green;
   max-width: 80%;
   word-wrap: break-word;
-
-
 }
 
 .outbound{
@@ -34,7 +50,7 @@
   padding: 8px;
   max-width: 80%;
   word-wrap: break-word;
-  background-color: transparent;
+  background-color: white;
   border: 2px solid $brand-green;
   color: $brand-green;
 
@@ -72,11 +88,11 @@
   .textarea.form-control {
     height: 55px;
   }
+  background-color: rgba(34,198,188, .1);
 }
 
 .enter-message {
   display: flex;
-  position: fixed;
   bottom: 0;
   width: 100%;
   border-top: 6px solid $brand-green;
@@ -85,14 +101,25 @@
   align-items: center;
 }
 
-.message-avatar-top {
-  width: 50px;
-  height:50px;
+.message-avatar-side {
+  width: 30px;
+  height:30px;
   border-radius: 50%;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-  border: 3px solid white;
-  margin-left: 10px;
-  margin-bottom: 10px;
+  border: 1px solid white;
+  position: absolute;
+  bottom: -10px;
+
+
 }
 
+.avatar-relative{
+  position: relative;
+}
+
+.message-avatar-top {
+  width: 58px;
+  height:58px;
+  border-radius: 50%;
+  border: 3px solid $brand-green;
+}
 
