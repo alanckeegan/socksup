@@ -1,4 +1,4 @@
-<div class="navbar-socksup navbar-static-top <% if @transparent_navbar %>navbar_transparent <% end %>">
+<div class="navbar-socksup navbar-static-top">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-socksup-brand" do %>
   <%= image_tag "socks.png", height: 50 %>
@@ -6,12 +6,9 @@
 
   <!-- Right Navigation -->
   <div class="navbar-socksup-right hidden-xs hidden-sm">
-
     <% if user_signed_in? %>
-
     <!-- Links when logged in -->
     <%= link_to "Profile", user_path(current_user), class: "navbar-socksup-item navbar-socksup-link" %>
-
     <!-- Avatar with dropdown menu -->
     <div class="navbar-socksup-item">
       <div class="dropdown">
@@ -25,7 +22,6 @@
         </ul>
       </div>
     </div>
-
     <% else %>
     <!-- Login link (when logged out) -->
     <%= link_to t(".sign_in", default: "Log in"), new_user_session_path, class: "navbar-socksup-item navbar-socksup-link" %>
@@ -35,9 +31,8 @@
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-socksup-item hidden-md hidden-lg">
-
     <% if user_signed_in? %>
-
+    <!-- Links when logged in -->
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-socksup-dropdown-menu">
