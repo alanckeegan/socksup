@@ -25,8 +25,8 @@
       <div class="inbox-info">
         <% if s.confirmed.nil?%>
           <i class="far fa-clock"></i>
-          <p>Awaiting Response</p>
-          <p class="small"><%= link_to "cancel", submission_path(s), method: :delete  %></p>
+          <p class="awaiting-response">Awaiting Response</p>
+          <p class="small cancel-button"><%= link_to "cancel", submission_path(s), method: :delete  %></p>
         <% elsif s.confirmed == true%>
           <i class="fas fa-check"></i>
           <p id="accepted"> <strong>Accepted!</strong></p>

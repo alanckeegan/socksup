@@ -29,7 +29,7 @@
     background-color: rgba(73, 171, 158, 0.050);
     border-radius: 5px;
 
-    p  {
+    p .cancel-button  {
       padding: 0;
       margin-bottom: 0;
       a {
@@ -62,8 +62,8 @@
   }
 }
 
-p  {
-  padding: 0;
+.awaiting-response {
+  margin-bottom: 0;
 }
 
 .listing-title-position {
