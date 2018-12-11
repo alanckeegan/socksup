@@ -1,15 +1,17 @@
 <div class="message">
+
   <% if user_is_messages_author %>
   <div class = "outbound">
     <%= m.content %>
   </div>
-
-    <%= image_tag m.submission.listing.employer.photo, class: 'message-avatar-top'  %>
-
   <% else %>
-
-
-
+  <div class="avatar-relative">
+  <% if m.user.employer.nil? %>
+    <%=image_tag m.user.photo, class: 'message-avatar-side'  %>
+    <% else %>
+    <%= image_tag m.submission.listing.employer.photo, class: 'message-avatar-side' %>
+  <% end %>
+  </div>
   <div class="inbound">
     <%= m.content %>
   </div>
