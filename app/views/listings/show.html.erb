@@ -11,9 +11,9 @@
 <div class="listing-show-job-info">
     <% if @currentusersubmissionslistingids.include?(@listing.id) %>
        <%= link_to 'View your Application', user_path(current_user), class: "btn btn-success socksup-primary btn-pin" %>
-    <% elsif current_user.employer && (current_user.employer.id == @listing.employer.id)  %>
+    <% elsif current_user && current_user.employer && (current_user.employer.id == @listing.employer.id)  %>
       <%= link_to 'View Applicants', user_path(current_user), class: "btn btn-success socksup-primary btn-pin" %>
-    <% elsif current_user.employer && (current_user.employer.name != @listing.employer.name) %>
+    <% elsif current_user && current_user.employer && (current_user.employer.name != @listing.employer.name) %>
       <%= link_to 'View Company Profile', employer_path(@listing.employer), class: "btn btn-success socksup-primary btn-pin" %>
     <% else %>
        <%= link_to 'Take the quiz', listing_submissions_path(@listing), method: :post, class: "btn btn-success socksup-primary btn-pin" %>
