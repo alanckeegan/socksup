@@ -1,7 +1,8 @@
 <div class="container">
   <div class="chat">
       <% @messages.each do |m| %>
-      <%= render "message", m: m %>
+
+      <%= render "message", m: m , user_is_messages_author: (m.user == current_user)%>
       <% end %>
     </div>
   </div>
@@ -11,6 +12,7 @@
             <div>
               <%= f.input :content, :placeholder => "Message", label: false, input_html: { class: 'message-input'}%>
             </div>
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
             <div>
               <%= f.submit "Send", class:"btn btn-primary socksup-secondary chat-button"%>
               </div>
@@ -20,11 +22,16 @@
 
     <% content_for :after_js do %>
     <script>
-      App['submission_<%=@submission.id%>'] = App.cable.subscriptions.create({ channel: 'SubmissionsChannel', submission_id: <%= @submission.id %> }, {received: (data) => {
+    scrollLastMessageIntoView()
+
+      App['submission_<%=@submission.id%>'] = App.cable.subscriptions.create({ channel: 'SubmissionsChannel', submission_id: <%= @submission.id %> },
+        {
+        received: (data) => {
+        if (data.current_user_id !== <%= current_user.id %>){
         const chat = document.querySelector('.chat');
         chat.insertAdjacentHTML('beforeend', data.message_partial);
-        const input = document.getElementById('message_content');
-        input.value = '';
+        scrollLastMessageIntoView()
+        }
       }
     })
     </script>
