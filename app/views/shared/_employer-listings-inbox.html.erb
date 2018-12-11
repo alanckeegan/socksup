@@ -5,13 +5,11 @@
     <p><%@inbound_submissions.each do |s|%></p>
     <div class="inbox-card">
       <div class="inbox-info inbox-info-left">
-        <div class="big">
-          <%= "#{s.user.first_name} #{s.user.last_name}"%>
-        </div>
+        <%= image_tag s.user.photo, class: "profile-picture-inbox" %>
+          <p><%= "#{s.user.first_name} #{s.user.last_name}"%></p>
         <div class="small">
           <%= "#{s.listing.title}" %>
         </div>
-        <%= image_tag s.user.photo, class: "profile-picture-inbox" %>
       </div>
       <div class="inbox-info">
         <% if s.confirmed.nil?%>
