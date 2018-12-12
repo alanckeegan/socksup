@@ -9,6 +9,7 @@ body{height: 100%;}
 
 .rel-box{
  position:relative;
+ max-width: 75%;
 }
 
 .employer-name{
@@ -54,10 +55,7 @@ body{height: 100%;}
   text-decoration: none;
   padding: 8px;
   text-align: left;
-
-  max-width: 80%;
   word-wrap: break-word;
-
   background-color: white;
   border: 1px solid $brand-green;
   color: $brand-green;
@@ -73,7 +71,7 @@ body{height: 100%;}
   text-align: right;
   margin-left: auto;
   padding: 8px;
-  max-width: 80%;
+  max-width: 75%;
   word-wrap: break-word;
   color: white;
   background-color: $brand-green;
