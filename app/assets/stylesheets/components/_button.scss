@@ -29,3 +29,38 @@
 .100width-button {
   width: 100%;
 }
+
+.back-button-position {
+  position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 25px;
+    color: white;
+    text-shadow: 2px 2px 5px #333;
+    border-radius: 50%;
+    width: 35px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    font-weight: lighter;
+    &:focus {
+      color: white;
+    }
+    &:active {
+      opacity: 0.6;
+      color: white;
+      text-decoration: none;
+    }
+}
+
+.chat-back-button {
+  color: lightgray;
+  font-size: 25px;
+  &:focus {
+      color: white;
+    }
+    &:active {
+      opacity: 0.6;
+      color: gray;
+      text-decoration: none;
+    }
+}
