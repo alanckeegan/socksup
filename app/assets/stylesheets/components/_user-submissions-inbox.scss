@@ -29,13 +29,15 @@
     background-color: rgba(73, 171, 158, 0.050);
     border-radius: 5px;
 
-    p .cancel-button  {
+     #cancel  {
       padding: 0;
       margin-bottom: 0;
-      a {
-        color: #FF5B60;
-      }
+      color: #FF5B60;
+      background-color: transparent;
+      border: none;
+
     }
+
 
     .no-apply {
       width: auto;
