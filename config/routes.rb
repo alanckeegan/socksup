@@ -21,6 +21,8 @@ resources :submissions, only: [:show, :destroy] do
   resources :messages, only:[:index, :create]
 end
 
+post '/employers/:employer_id/listings/new', to: 'listings#create', as: :new_listing
+
 get 'quizzes/:quiz_id/submissions/:id', to: 'quizzes#show', as: :take_quiz
 patch 'submissions/:id/submit', to: 'submissions#submit', as: :submit
 patch 'submissions/:id/confirm', to: 'submissions#confirm', as: :confirm

@@ -1,11 +1,13 @@
 <!-- Background picture with profiule picture on top -->
 <div class="banner-profile" style="background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/4RUieTItxik2c5fvx/simple-animated-geometric-background-with-squares-4k-ultra-high-definition-video-loop_hzhlwak8x_thumbnail-full01.png')">
   <div class="banner-content-profile">
+    <div class="new-listing-button"> <%= link_to "New application",  new_employer_listing_path(current_user.employer), class: "btn btn-success socksup-primary small response-button" %></div>
     <% if current_user.employer %>
-      <h3><%= current_user.employer.name %></h3>
+    <h3><%= current_user.employer.name %></h3>
     <% else %>
-      <h3><%= current_user.first_name%> <%= current_user.last_name%></h3>
+    <h3><%= current_user.first_name%> <%= current_user.last_name%></h3>
     <% end %>
+
     <% if current_user.employer %>
     <%= image_tag current_user.employer.photo, class: "profile-picture" %>
     <%= image_tag current_user.photo, class: "profile-picture-tiny" %>
@@ -29,4 +31,4 @@
 <!-- background: #02AAB0;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #00CDAC, #02AAB0);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #00CDAC, #02AAB0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
- -->
+-->

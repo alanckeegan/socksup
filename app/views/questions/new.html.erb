@@ -1,0 +1,23 @@
+<p>what is your question type</p>
+<%= form_tag questions_path, method: :post do %>
+
+Question
+<%= text_field_tag :question %>
+
+<%= # f.input :question_type, as: :radio_buttons, :required => true, collection: [['0','Multiple choice'],['1','Open answer']], label_method: :second, value_method: :first, :item_wrapper_class => 'inline'
+ %>
+
+Correct answer
+<%= text_field_tag :correct_answer %>
+
+Wrong answer 1
+<%= text_field_tag :wrong_answers0 %>
+
+Wrong answer 2
+<%= text_field_tag :wrong_answers1 %>
+
+Wrong answer 3
+<%= text_field_tag :wrong_answers2 %>
+<%= button_tag :submit %>
+
+<% end %>
