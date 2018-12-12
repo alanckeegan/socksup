@@ -12,8 +12,15 @@
     <%= image_tag m.submission.listing.employer.photo, class: 'message-avatar-side' %>
   <% end %>
   </div>
-  <div class="inbound">
-    <%= m.content %>
+  <div class="rel-box">
+    <div class="inbound">
+      <%= m.content %>
+    </div>
+    <% unless m.user.employer.nil? %>
+    <div class="employer-name">
+    <%= "#{m.user.first_name} from #{m.submission.listing.employer.name}" %>
+    </div>
+    <% end %>
   </div>
   <% end %>
 </div>

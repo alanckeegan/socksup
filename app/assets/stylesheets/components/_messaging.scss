@@ -7,6 +7,19 @@ body{height: 100%;}
 
 }
 
+.rel-box{
+ position:relative;
+}
+
+.employer-name{
+  font-size: 10px;
+  position:absolute;
+  left: 30px;
+  color: $brand-green;
+  overflow: visible;
+  white-space: nowrap;
+}
+
 .a{
   &.active{
     text-decoration:none;
