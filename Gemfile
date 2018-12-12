@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '5.2.1.1'
 gem 'redis'
 gem 'geocoder'
+gem 'serviceworker-rails'
 
 
 gem 'autoprefixer-rails'
