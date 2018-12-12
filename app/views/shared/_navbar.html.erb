@@ -1,7 +1,11 @@
 <div class="navbar-socksup navbar-static-top">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-socksup-brand" do %>
-  <%= image_tag "socks.png", height: 50 %>
+  <% if params[:controller] == "messages" && params[:action] == "index"  %>
+    <%= link_to '<i class="fas fa-arrow-left"></i>'.html_safe, url_for(:back), class: 'chat-back-button' %>
+  <% else %>
+    <%= link_to root_path, class: "navbar-socksup-brand" do %>
+      <%= image_tag "socks.png", height: 50 %>
+    <% end %>
   <% end %>
 
   <!-- Right Navigation -->
