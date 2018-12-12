@@ -26,7 +26,41 @@
       <% if s.confirmed.nil?%>
       <i class="far fa-clock"></i>
       <p class="awaiting-response">Awaiting Response</p>
-      <p class="small cancel-button"><%= link_to "cancel", submission_path(s), method: :delete  %></p>
+
+        <%= button_to "Cancel", user_path(current_user), method: :patch, id: "cancel", remote: :true, "data-toggle" => "modal", "data-target" => "#confirmCancel", "data-backdrop"=> "static", "data-keyboard" => "false"%>
+
+
+<!-- MODAL -->
+
+<div class="modal fade" id="confirmCancel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center green-top">
+        <h3  id="modalCenterTitle">Dont give up!</h3>
+      </div>
+      <div class="modal-body green-body">
+        <%= "Are you sure you want to cancel your application to be a #{s.listing.title.downcase} at #{s.listing.employer.name}? \n It's not too late! They haven't rejected you!" %>
+      </div>
+      <div>
+        <div class="modal-footer modal-center-text">
+          <div class="modal-button">
+            <%= link_to 'Nevermind', user_path(current_user), class: "btn btn-success socksup-primary" %>
+          </div>
+          <div class="modal-button">
+            <%= link_to 'Cancel Application', submission_path(s), method: :delete, class: "btn btn-success socksup-secondary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- END MODAL -->
+
+
+
+
       <% elsif s.confirmed == true%>
       <i class="fas fa-check"></i>
       <p id="accepted"> <strong>Accepted!</strong></p>
@@ -40,3 +74,6 @@
   <% end %>
   <% end %>
 </div>
+
+
+

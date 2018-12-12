@@ -11,4 +11,6 @@ class UsersController < ApplicationController
       @inbound_submissions = @inbound_submissions.sort_by{|x| x.created_at}.reverse
     end
   end
+
+
 end
