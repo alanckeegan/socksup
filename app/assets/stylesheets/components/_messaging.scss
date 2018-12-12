@@ -2,7 +2,7 @@ html{ height: 100%;}
 body{height: 100%;}
 .message{
   display: flex;
-  padding: 5px 0px;
+  padding: 10px 0px;
 
 
 }
@@ -39,7 +39,7 @@ body{height: 100%;}
   border-bottom-left-radius: 40%;
   border-bottom: 1px solid #e7e7e7;
   border-right: 1px solid #e7e7e7;
-  border-left:1px solid #e7e7e7;
+  border-left: 1px solid #e7e7e7;
   text-align: center;
   text-decoration: none;
 
@@ -54,10 +54,13 @@ body{height: 100%;}
   text-decoration: none;
   padding: 8px;
   text-align: left;
-  color: white;
-  background-color: $brand-green;
+
   max-width: 80%;
   word-wrap: break-word;
+
+  background-color: white;
+  border: 1px solid $brand-green;
+  color: $brand-green;
 }
 
 .outbound{
@@ -72,9 +75,9 @@ body{height: 100%;}
   padding: 8px;
   max-width: 80%;
   word-wrap: break-word;
-  background-color: white;
-  border: 2px solid $brand-green;
-  color: $brand-green;
+  color: white;
+  background-color: $brand-green;
+
 
 }
 
