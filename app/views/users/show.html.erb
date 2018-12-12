@@ -17,7 +17,6 @@
   </div>
 </div>
 
-
 <!-- If a user is an applicant it will show the jobs they user has applied for, if it is an employer it will show applicants -->
 <div class="inbox-container">
   <% if  @user.employer %>
@@ -26,6 +25,7 @@
   <%= render 'shared/user-submissions-inbox' %>
   <% end %>
 </div>
+
 
 <!-- This is the simple gradient background -->
 <!-- background: #02AAB0;  /* fallback for old browsers */

@@ -1,23 +1,32 @@
-<p>what is your question type</p>
-<%= form_tag questions_path, method: :post do %>
-
-Question
-<%= text_field_tag :question %>
-
-<%= # f.input :question_type, as: :radio_buttons, :required => true, collection: [['0','Multiple choice'],['1','Open answer']], label_method: :second, value_method: :first, :item_wrapper_class => 'inline'
- %>
-
-Correct answer
-<%= text_field_tag :correct_answer %>
-
-Wrong answer 1
-<%= text_field_tag :wrong_answers0 %>
-
-Wrong answer 2
-<%= text_field_tag :wrong_answers1 %>
-
-Wrong answer 3
-<%= text_field_tag :wrong_answers2 %>
-<%= button_tag :submit %>
-
-<% end %>
+<div class="container" id="question-creation-container">
+  <h3>Your question will be:</h3>
+  <%= form_tag employer_listing_questions_path, method: :post do %>
+  <%= text_field_tag :question, "", {class: "form-control form-input"} %>
+  <h3>Type of question</h3>
+  <div class="inline" id="question_type_mc" >
+  <%= radio_button_tag(:question_type, "multiple_choice", checked = false, id: "question_type_mc_radio", class: "radio_buttons required" )  %>
+  <%= label_tag :question_type_mc_radio, "Multiple choice", class: "collection_radio_buttons" %>
+  </div>
+  <div class="inline" id="question_type_os" >
+  <%= radio_button_tag(:question_type, "text_field", checked = false, id: "question_type_os_radio", class: "radio_buttons required")  %>
+  <%= label_tag :question_type_os_radio, "Open answer", class: "collection_radio_buttons" %>
+</div>
+  <div class="row">
+    <div class="mc-input" id="multiple_answers" style="visibility:hidden">
+      <div>
+        <%= text_field_tag :correct_answer, "Correct answer", {class: "form-control form-input mc-answer-margin-bottom-20"}%>
+      </div>
+      <div>
+        <%= text_field_tag :wrong_answers0, "Wrong answer 1", {class: "form-control form-input mc-answer-margin-bottom-20"} %>
+      </div>
+      <div>
+        <%= text_field_tag :wrong_answers1, "Wrong answer 2", {class: "form-control form-input mc-answer-margin-bottom-20"} %>
+      </div>
+      <div>
+        <%= text_field_tag :wrong_answers2, "Wrong answer 3", {class: "form-control form-input mc-answer-margin-bottom-20"} %>
+      </div>
+    </div>
+  </div>
+  <%= button_tag :submit, {class: "btn btn-success socksup-primary small"}  %>
+  <% end %>
+</div>

@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
 resources :users, only: [:show]
 resources :employers, only: [:show] do
-  resources :listings, only: [:new, :create]
+  resources :listings, only: [:new, :create] do
+    resources :questions, only: [:new, :create]
+  end
 end
-
-resources :questions, only: [:new, :create]
 
 resources :listings, only: [:index,:show] do
   resources :submissions, only: [:create]
