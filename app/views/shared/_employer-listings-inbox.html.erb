@@ -8,13 +8,13 @@
         <%= image_tag s.user.photo, class: "profile-picture-inbox" %>
           <p class="applicant-name"><%= "#{s.user.first_name}" " #{s.user.last_name}"%></p>
         <div class="small listing-title-position">
-          <%= "#{s.listing.title}" %>
+          <strong><%= "#{s.listing.title}" %></strong>
         </div>
       </div>
       <div class="inbox-info">
         <% if s.confirmed.nil?%>
            <i class="far fa-clock"></i>
-           <p>Awaiting <br> Response</p>
+           <p class="awaiting-response">Awaiting <br> Response</p>
            <%= link_to "View Application",submission_path(s), class: "btn btn-success socksup-primary small response-button" %>
         <% elsif s.confirmed == true%>
           <i class="fas fa-check"></i>

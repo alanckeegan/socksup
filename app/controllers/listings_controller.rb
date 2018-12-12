@@ -20,9 +20,23 @@ class ListingsController < ApplicationController
 
     @all_listings = Listing.all
     session[:search] = params[:query]
+    if current_user.nil?
+    @submissions = []
+    else
+    @submissions = current_user.submissions
+    end
   end
 
   def show
+    if current_user.nil?
+    @submissions = []
+    else
+    @submissions = current_user.submissions
+    end
+    @currentusersubmissionslistingids = []
+    @submissions.each do |submission|
+      @currentusersubmissionslistingids << submission.listing_id
+    end
     @listing = Listing.find(params[:id])
     @markers = [{ lng: @listing.employer.longitude, lat: @listing.employer.latitude }]
   end

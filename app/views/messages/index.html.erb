@@ -1,30 +1,50 @@
-<div class="container">
-  <div class="chat">
-      <% @messages.each do |m| %>
-      <%= render "message", m: m %>
-      <% end %>
-    </div>
+
+<div class="chat">
+
+ <% if current_user.employer %>
+ <div class="contact-information">
+  <h4>
+    <%= link_to "#{@submission.user.first_name} #{@submission.user.last_name}", user_path(@submission.user), :class => "brand-link" %>
+  </h4>
+ </div>
+ <% else %>
+ <div class="contact-information">
+ <h4><%= link_to @submission.listing.employer.name, employer_path(@submission.listing.employer) , :class => "brand-link" %></h4>
+ </div>
+ <% end %>
+ <% @messages.each do |m| %>
+
+ <%= render "message", m: m , user_is_messages_author: (m.user == current_user) %>
+ <% end %>
+</div>
+
+<div class="enter-message">
+ <%= simple_form_for [@submission, Message.new],  remote: true  do |f|%>
+ <div class="form-box-chat">
+  <div>
+    <%= f.input :content, :placeholder => "Message", label: false, input_html: { class: 'message-input'}%>
   </div>
-    <div class="enter-message">
-       <%= simple_form_for [@submission, Message.new],  remote: true  do |f|%>
-          <div class="form-box-chat">
-            <div>
-              <%= f.input :content, :placeholder => "Message", label: false, input_html: { class: 'message-input'}%>
-            </div>
-            <div>
-              <%= f.submit "Send", class:"btn btn-primary socksup-secondary chat-button"%>
-              </div>
-          </div>
-        <% end %>
-    </div>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <div>
+    <%= f.submit "Send", class:"btn btn-primary socksup-primary chat-button"%>
+  </div>
+</div>
+<% end %>
+</div>
 
-    <% content_for :after_js do %>
-    <script>
-      App['submission_<%=@submission.id%>'] = App.cable.subscriptions.create({ channel: 'SubmissionsChannel', submission_id: <%= @submission.id %> }, {received: (data) => {
+<% content_for :after_js do %>
+<script>
+  scrollLastMessageIntoView()
+
+  App['submission_<%=@submission.id%>'] = App.cable.subscriptions.create({ channel: 'SubmissionsChannel', submission_id: <%= @submission.id %> },
+  {
+    received: (data) => {
+      if (data.current_user_id !== <%= current_user.id %>){
         const chat = document.querySelector('.chat');
-        chat.insertAdjacentHTML('beforeend', data.message_partial)
-
+        chat.insertAdjacentHTML('beforeend', data.message_partial);
+        scrollLastMessageIntoView()
       }
-    })
-    </script>
-    <% end %>
+    }
+  })
+</script>
+<% end %>

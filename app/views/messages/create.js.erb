@@ -1,6 +1,10 @@
+
+
+(function(){
 const chat = document.querySelector('.chat')
-chat.insertAdjacentHTML('beforeend', '<div class="message"><div class="outbound"><%=@message.content%></div></div>')
-const input = document.findElementById('message_content');
+chat.insertAdjacentHTML('beforeend', "<%=j render 'message',  m: @message, user_is_messages_author: true%>")
+const input = document.getElementById('message_content');
 input.value = '';
 input.blur();
-
+scrollLastMessageIntoView()
+})()

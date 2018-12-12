@@ -15,7 +15,7 @@ resources :listings, only: [:index,:show] do
   resources :submissions, only: [:create]
 end
 
-resources :submissions, only: [:show] do
+resources :submissions, only: [:show, :destroy] do
   # resources :quizzes, only: [:show]
   resources :responses, only: [:index, :new, :create]
   resources :messages, only:[:index, :create]
@@ -27,4 +27,6 @@ get 'quizzes/:quiz_id/submissions/:id', to: 'quizzes#show', as: :take_quiz
 patch 'submissions/:id/submit', to: 'submissions#submit', as: :submit
 patch 'submissions/:id/confirm', to: 'submissions#confirm', as: :confirm
 patch 'submissions/:id/reject', to: 'submissions#reject', as: :reject
+mount ActionCable.server => "/cable"
 end
+
