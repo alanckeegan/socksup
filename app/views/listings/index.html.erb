@@ -1,50 +1,49 @@
-<div class="container">
-  <%= simple_form_for :query, :url => listings_path, method: "get" do |f| %>
-    <div class="search-bar">
-      <div class="field">
-        <%= f.input :city, as: :string, required: true, placeholder:'Location', label: false, input_html: {value: params[:query][:city], class: 'form-input field'} %>
-      </div>
-      <div class="field">
-        <%= f.input :title, as: :string, required: true, placeholder:'Job Type', label: false, input_html: {value: params[:query][:title], class: 'form-input field'} %>
-      </div>
-      <div class="field final">
-        <%= f.button :submit, "Filter", class: "btn btn-success socksup-secondary field" %>
-      </div>
+<div class="filter-wrapper">
+<%= simple_form_for :query, :url => listings_path, method: "get" do |f| %>
+  <div class="search-bar fixed">
+    <div class="field">
+      <%= f.input :city, as: :string, required: true, placeholder:'Location', label: false, input_html: {value: params[:query][:city], class: 'form-input field'} %>
     </div>
+    <div class="field">
+      <%= f.input :title, as: :string, required: true, placeholder:'Job Type', label: false, input_html: {value: params[:query][:title], class: 'form-input field'} %>
+    </div>
+    <div class="field final">
+      <%= f.button :submit, "Filter", class: "btn btn-success socksup-secondary field" %>
+    </div>
+  </div>
   <% end %>
-
-  <% if @listings.count == 0 %>
-<!-- Displays a message if the search criteria is not met -->
+  <div class="listings-container">
+    <% if @listings.count == 0 %>
+    <!-- Displays a message if the search criteria is not met -->
     <p style="text-align: center; margin-top: 20px;"><strong>Oops, no job listings fit your search criteria.</strong> <br> Try something else ☺️</p>
     <%= image_tag("giraffe", style: "height: 25%; width: auto;", :alt => "giraffe found nothing") %>
-  <% else %>
-  <!-- Displays all the cards which match the search criteria -->
+    <% else %>
+    <!-- Displays all the cards which match the search criteria -->
     <div class="row">
       <% @all_listings.each do |listing| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <%= link_to listing_path(listing) do %>
-          <!-- The display none is added only to the listings which do not meet the search criteria  -->
-         <div class="card box" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url('<%= listing.photo %>'); <%= "display: none" unless @listings.include?(listing) %>" >   
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <%= link_to listing_path(listing) do %>
+        <!-- The display none is added only to the listings which do not meet the search criteria  -->
+        <div class="card box" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url('<%= listing.photo %>'); <%= "display: none" unless @listings.include?(listing) %>" >
           <% @submissions.each do |submission| %>
-                  <% currentusersubmissionslistingid = submission.listing.id %>
-                    <% if listing.id == currentusersubmissionslistingid %>
-                      <div class="ribbon"><span>APPLIED</span></div>
-                    <% end %>
-                  <% end %>
-                <div class="card-content">
-                  <div class="info">
-                      <h2 class="card-title"><%= listing.title %></h2>
-                      <h3 class="card-location"><%= listing.employer.city %></h3>
-                      <p class="card-description"><%= listing.employer.name %></p>
-                  </div>
-                </div>
-            </div>
+          <% currentusersubmissionslistingid = submission.listing.id %>
+          <% if listing.id == currentusersubmissionslistingid %>
+          <div class="ribbon"><span>APPLIED</span></div>
           <% end %>
+          <% end %>
+          <div class="card-content">
+            <div class="info">
+              <h2 class="card-title"><%= listing.title %></h2>
+              <h3 class="card-location"><%= listing.employer.city %></h3>
+              <p class="card-description"><%= listing.employer.name %></p>
+            </div>
+          </div>
         </div>
+        <% end %>
+      </div>
       <% end %>
     </div>
-  <% end %>
+    <% end %>
+  </div>
 
 </div>
-
-
