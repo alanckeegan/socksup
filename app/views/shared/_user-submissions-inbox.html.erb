@@ -32,7 +32,7 @@
       <p id="accepted"> <strong>Accepted!</strong></p>
       <%= link_to "Messages", submission_messages_path(s), class: "btn btn-success socksup-primary no-apply small" %>
       <% else s.confirmed == false%>
-      <p style="color: red;"> Application<br>Rejected</p>
+      <p style="color: red; font-weight: bold;">Rejected</p>
       <% end %>
     </div>
   </div>
