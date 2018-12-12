@@ -9,10 +9,10 @@
     <% end %>
 
     <% if current_user.employer %>
-    <%= image_tag current_user.employer.photo, class: "profile-picture" %>
-    <%= image_tag current_user.photo, class: "profile-picture-tiny" %>
+    <%= cl_image_tag current_user.employer.photo, class: "profile-picture", width: 70, height: 70 %>
+    <%= cl_image_tag current_user.photo, class: "profile-picture-tiny", width: 70, height: 70 %>
     <% else %>
-    <%= image_tag current_user.photo, class: "profile-picture" %>
+    <%= cl_image_tag current_user.photo, class: "profile-picture", width: 70, height: 70 %>
     <% end %>
   </div>
 </div>

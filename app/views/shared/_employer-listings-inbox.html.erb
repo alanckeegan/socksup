@@ -5,7 +5,7 @@
     <p><%@inbound_submissions.each do |s|%></p>
     <div class="inbox-card">
       <div class="inbox-info inbox-info-left">
-        <%= image_tag s.user.photo, class: "profile-picture-inbox" %>
+        <%= cl_image_tag s.user.photo, class: "profile-picture-inbox" %>
           <p class="applicant-name"><%= "#{s.user.first_name}" " #{s.user.last_name}"%></p>
         <div class="small listing-title-position">
           <strong><%= "#{s.listing.title}" %></strong>

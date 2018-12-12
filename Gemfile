@@ -10,6 +10,8 @@ gem 'rails', '5.2.1.1'
 gem 'redis'
 gem 'geocoder'
 gem 'serviceworker-rails'
+gem 'carrierwave', '~> 1.0'
+gem 'cloudinary', '~> 1.9.1'
 
 
 gem 'autoprefixer-rails'

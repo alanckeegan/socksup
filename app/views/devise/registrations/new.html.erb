@@ -4,18 +4,18 @@
       <div class="centering-text">
         <h2>Sign up</h2>
       </div>
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),:html => {multipart: :true}) do |f| %>
         <%= f.error_notification %>
         <div class="form-box">
           <div class="form-inputs">
             <%= f.input :first_name,
-                        required: true, placeholder: 'Alan', input_html: { class: 'form-input'}%>
+                        required: true, placeholder: 'John', input_html: { class: 'form-input'}%>
             <%= f.input :last_name,
-                        required: true, placeholder: 'Keegan', input_html: { class: 'form-input'}%>
+                        required: true, placeholder: 'Smith', input_html: { class: 'form-input'}%>
             <%= f.input :email,
                         required: true,
                         autofocus: true ,
-                        input_html: { autocomplete: "email" }, input_html: { class: 'form-input'}, placeholder: 'your@email.com'%>
+                        input_html: { autocomplete: "email" }, input_html: { class: 'form-input'}, placeholder: 'johnsmith@socksup.co.uk'%>
             <%= f.input :password,
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -23,6 +23,8 @@
             <%= f.input :password_confirmation,
                         required: true,
                         input_html: { autocomplete: "new-password" }, input_html: { class: 'form-input'}, placeholder: '************' %>
+             <%= f.input :photo %>
+             <%= f.input :photo_cache, as: :hidden %>
           </div>
           <div class="form-actions">
           <%= f.button :submit, "Sign up", class: "btn btn-success socksup-primary"%>
