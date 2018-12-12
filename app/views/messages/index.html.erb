@@ -9,7 +9,7 @@
  </div>
  <% else %>
  <div class="contact-information">
- <h4><%= link_to @submission.listing.employer.name, employer_path(@submission.listing.employer) , :class => "brand-link" %></h4>
+ <h4><%= link_to "#{@submission.listing.employer.name}", employer_path(@submission.listing.employer) , :class => "brand-link" %></h4>
  </div>
  <% end %>
  <% @messages.each do |m| %>
