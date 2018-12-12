@@ -1,3 +1,5 @@
+html{ height: 100%;}
+body{height: 100%;}
 .message{
   display: flex;
   padding: 5px 0px;
@@ -12,8 +14,8 @@
 }
 
 .contact-information{
-  position:sticky;
-  top: 0;
+  position:fixed;
+  top: 70px;
   margin-left: 20%;
   color: $brand-green;
   z-index: 1;
@@ -90,13 +92,14 @@
 }
 
 .chat {
-  height: 76vh;
+  height: 100%;
   overflow: scroll;
   .textarea.form-control {
     height: 55px;
   }
   background-color: rgba(34,198,188, .1);
   padding-bottom: 10px;
+  padding-top: 70px;
 }
 
 .enter-message {
@@ -105,19 +108,29 @@
   width: 100%;
   border-top: 6px solid $brand-green;
   justify-content: space-around;
-  padding: 5px;
+  padding: 10px;
+
   align-items: center;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+
+
 }
 
 .message-avatar-side {
   width: 30px;
-  height:30px;
+  height: 30px;
   border-radius: 50%;
   border: 1px solid white;
   position: absolute;
   bottom: -10px;
 
 
+}
+
+#message_content{
+  height: 40px;
 }
 
 .avatar-relative{
