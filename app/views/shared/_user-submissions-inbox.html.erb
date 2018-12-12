@@ -3,40 +3,40 @@
   <h4>Applications</h4>
   <% if @user.submissions.count == 0 %>
   <!-- Display message if the user has not yet applied for any jobs -->
-    <div class="inbox-card">
-      <p><strong>You did not apply for any jobs yet</strong></p>
-      <%= link_to "Search a job now", listings_path, class: "btn btn-success socksup-primary no-apply"%>
-    </div>
+  <div class="inbox-card">
+    <p><strong>You did not apply for any jobs yet</strong></p>
+    <%= link_to "Search a job now", listings_path, class: "btn btn-success socksup-primary no-apply"%>
+  </div>
   <% else %>
-<!-- Display all jobs which the user has applied for showing newest first -->
-    <% @user.submissions.reverse.each do |s| %>
-    <div class="inbox-card">
-      <div class="inbox-info inbox-info-left">
-        <div class="big">
-          <%= "#{s.listing.title}"%>
-        </div>
-        <div class="small">
-          <%= "#{s.listing.start_date.strftime("%d %b %y")} - #{s.listing.end_date.strftime("%d %b %y")}" %>
-        </div>
-        <div class="small">
-          <strong><%= "#{s.listing.employer.name}"%></strong>
-        </div>
+  <!-- Display all jobs which the user has applied for showing newest first -->
+  <% @user.submissions.reverse.each do |s| %>
+  <div class="inbox-card">
+    <div class="inbox-info inbox-info-left">
+      <div class="big">
+        <%= "#{s.listing.title}"%>
       </div>
-      <div class="inbox-info">
-        <% if s.confirmed.nil?%>
-          <i class="far fa-clock"></i>
-          <p class="awaiting-response">Awaiting Response</p>
-          <p class="small cancel-button"><%= link_to "cancel", submission_path(s), method: :delete  %></p>
-        <% elsif s.confirmed == true%>
-          <i class="fas fa-check"></i>
-          <p id="accepted"> <strong>Accepted!</strong></p>
-          <%= link_to "Messages", submission_messages_path(s), class: "btn btn-success socksup-primary no-apply small" %>
-        <% else s.confirmed == false%>
-          <p style="color: red;">Sorry <br> Application Rejected</p>
-        <% end %>
+      <div class="small">
+        <%= "#{s.listing.start_date.strftime("%d %b %y")} - #{s.listing.end_date.strftime("%d %b %y")}" %>
+      </div>
+      <div class="small">
+        <strong><%= "#{s.listing.employer.name}"%></strong>
       </div>
     </div>
-    <hr width="50%">
-    <% end %>
+    <div class="inbox-info">
+      <% if s.confirmed.nil?%>
+      <i class="far fa-clock"></i>
+      <p class="awaiting-response">Awaiting Response</p>
+      <p class="small cancel-button"><%= link_to "cancel", submission_path(s), method: :delete  %></p>
+      <% elsif s.confirmed == true%>
+      <i class="fas fa-check"></i>
+      <p id="accepted"> <strong>Accepted!</strong></p>
+      <%= link_to "Messages", submission_messages_path(s), class: "btn btn-success socksup-primary no-apply small" %>
+      <% else s.confirmed == false%>
+      <p style="color: red;"> Application<br>Rejected</p>
+      <% end %>
+    </div>
+  </div>
+  <hr width="50%">
+  <% end %>
   <% end %>
 </div>
