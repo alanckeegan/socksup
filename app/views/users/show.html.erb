@@ -1,7 +1,7 @@
 <!-- Background picture with profiule picture on top -->
 <div class="banner-profile" style="background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/4RUieTItxik2c5fvx/simple-animated-geometric-background-with-squares-4k-ultra-high-definition-video-loop_hzhlwak8x_thumbnail-full01.png')">
   <div class="banner-content-profile">
-    <div class="new-listing-button"> <%= link_to "New application",  new_employer_listing_path(current_user.employer), class: "btn btn-success socksup-primary small response-button" %></div>
+    <!-- <div class="new-listing-button"> <#%= link_to "New application",  new_employer_listing_path(current_user.employer), class: "btn btn-success socksup-primary small response-button" %></div> -->
     <% if current_user.employer %>
     <h3><%= current_user.employer.name %></h3>
     <% else %>

@@ -15,8 +15,10 @@
       <%= link_to 'View Applicants', user_path(current_user), class: "btn btn-success socksup-primary btn-pin" %>
     <% elsif current_user && current_user.employer && (current_user.employer.name != @listing.employer.name) %>
       <%= link_to 'View Company Profile', employer_path(@listing.employer), class: "btn btn-success socksup-primary btn-pin" %>
+    <% elsif !user_signed_in? %>
+      <%= link_to 'Take the quiz', new_user_session_path, class: "btn btn-success socksup-primary btn-pin" %>
     <% else %>
-       <%= link_to 'Take the quiz', listing_submissions_path(@listing), method: :post, class: "btn btn-success socksup-primary btn-pin" %>
+      <%= link_to 'Take the quiz', listing_submissions_path(@listing), method: :post, class: "btn btn-success socksup-primary btn-pin" %>
     <% end %>
 
   <!-- Links back to results page persisting the filters added before changing to show page -->
