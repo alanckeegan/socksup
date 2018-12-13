@@ -4,7 +4,7 @@ Rails.application.configure do
   config.webpacker.check_yarn_integrity = false
   # Settings specified here will take precedence over those in config/application.rb.
   config.action_cable.url = "wss://www.socksup.co.uk/cable"
-  config.action_cable.allowed_request_origins = [ "http://www.socksup.co.uk", "https://www.socksup.co.uk" ]
+  config.action_cable.allowed_request_origins = ["https://www.socksup.co.uk"]
   # Code is not reloaded between requests.
   config.cache_classes = true
 
