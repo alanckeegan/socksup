@@ -1,0 +1,32 @@
+.form-input-dates {
+    display:flex;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+#h1-create-listing {
+  text-align: center;
+}
+
+
+#question-creation-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.mc-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.mc-answer-margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+input[type="date"].form-control, input[type="time"].form-control, input[type="datetime-local"].form-control, input[type="month"].form-control {
+    line-height: 39px;
+    width: 149px;
+}

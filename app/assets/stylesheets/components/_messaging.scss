@@ -2,9 +2,23 @@ html{ height: 100%;}
 body{height: 100%;}
 .message{
   display: flex;
-  padding: 5px 0px;
+  padding: 10px 0px;
 
 
+}
+
+.rel-box{
+ position:relative;
+ max-width: 75%;
+}
+
+.employer-name{
+  font-size: 10px;
+  position:absolute;
+  left: 30px;
+  color: $brand-green;
+  overflow: visible;
+  white-space: nowrap;
 }
 
 .a{
@@ -14,19 +28,19 @@ body{height: 100%;}
 }
 
 .contact-information{
-  position:fixed;
-  top: 70px;
-  margin-left: 20%;
+  // position:fixed;
+  // top: 70px;
+  // margin-left: 20%;
   color: $brand-green;
   z-index: 1;
   padding: 5px;
   background-color: white;
-  width: 60%;
-  border-bottom-right-radius: 40%;
-  border-bottom-left-radius: 40%;
-  border-bottom: 1px solid #e7e7e7;
-  border-right: 1px solid #e7e7e7;
-  border-left:1px solid #e7e7e7;
+  // width: 60%;
+  // border-bottom-right-radius: 40%;
+  // border-bottom-left-radius: 40%;
+  // border-bottom: 1px solid #e7e7e7;
+  // border-right: 1px solid #e7e7e7;
+  // border-left: 1px solid #e7e7e7;
   text-align: center;
   text-decoration: none;
 
@@ -34,34 +48,34 @@ body{height: 100%;}
 
 .inbound{
   margin-left: 30px;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 30px;
+  border-bottom-right-radius: 20px;
   text-decoration: none;
   padding: 8px;
   text-align: left;
-  color: white;
-  background-color: $brand-green;
-  max-width: 80%;
   word-wrap: break-word;
+  background-color: white;
+  border: 1px solid $brand-green;
+  color: $brand-green;
 }
 
 .outbound{
   margin-right: 10px;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 30px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
   border-bottom-right-radius: 0px;
   text-decoration: none;
   text-align: right;
   margin-left: auto;
   padding: 8px;
-  max-width: 80%;
+  max-width: 75%;
   word-wrap: break-word;
-  background-color: white;
-  border: 2px solid $brand-green;
-  color: $brand-green;
+  color: white;
+  background-color: $brand-green;
+
 
 }
 
@@ -75,7 +89,7 @@ body{height: 100%;}
 .message-input {
   border: 2px solid white;
   border-radius: 10px;
-  border-bottom: 2px solid #22C6BC;
+  border: 2px solid #22C6BC;
   box-shadow: none;
   align-items: center;
   height: 30px;
@@ -88,7 +102,8 @@ body{height: 100%;}
 }
 
 .chat-button {
-  width: 100%
+  width: 100%;
+  margin-left: 10px;
 }
 
 .chat {
@@ -99,7 +114,7 @@ body{height: 100%;}
   }
   background-color: rgba(34,198,188, .1);
   padding-bottom: 80px;
-  padding-top: 70px;
+  padding-top: 140px;
 }
 
 .enter-message {
@@ -114,6 +129,7 @@ body{height: 100%;}
   position: fixed;
   bottom: 0;
   background-color: white;
+  padding-bottom: 25px;
 
 
 }

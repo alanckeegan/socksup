@@ -5,12 +5,12 @@ Rails.application.routes.draw do
 
 
 resources :users, only: [:show]
+
 resources :employers, only: [:show, :new, :create] do
   resources :listings, only: [:new, :create] do
     resources :questions, only: [:new, :create]
   end
 end
-
 
 resources :listings, only: [:index,:show] do
   resources :submissions, only: [:create]

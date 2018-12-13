@@ -1,7 +1,27 @@
 <div class="navbar-socksup navbar-static-top">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-socksup-brand" do %>
-  <%= image_tag "socks.png", height: 50 %>
+  <% if params[:controller] == "messages" && params[:action] == "index"  %>
+    <%= link_to '<i class="fas fa-arrow-left"></i>'.html_safe, url_for(:back), class: 'chat-back-button' %>
+
+
+
+<% if current_user.employer %>
+ <div class="contact-information">
+  <h4>
+    <%= link_to "#{@submission.user.first_name} #{@submission.user.last_name}", user_path(@submission.user), :class => "brand-link" %>
+  </h4>
+ </div>
+ <% else %>
+ <div class="contact-information">
+ <h5><%= link_to "#{@submission.listing.employer.name}", employer_path(@submission.listing.employer) , :class => "brand-link" %></h5`>
+ </div>
+ <% end %>
+
+
+  <% else %>
+    <%= link_to root_path, class: "navbar-socksup-brand" do %>
+      <%= image_tag "socks.png", height: 50 %>
+    <% end %>
   <% end %>
 
   <!-- Right Navigation -->

@@ -43,10 +43,10 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
+    @quiz = Quiz.new
     @employer = Employer.find(params[:employer_id])
-    @listing.employer = current_user.employer
-    @listing.save
-    redirect_to new_question_path
+    @listing.update!(employer: @employer, quiz: @quiz)
+    redirect_to new_employer_listing_question_path(@employer, @listing)
   end
 
   def new
@@ -57,6 +57,6 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:title, :start_date, :end_date, :hours_per_week, :pay_per_hour)
+    params.require(:listing).permit(:title, :description, :start_date, :end_date, :hours_per_week, :pay_per_hour)
   end
 end

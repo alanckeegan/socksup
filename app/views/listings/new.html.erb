@@ -1,18 +1,25 @@
-<div>
-  <div>
-    <h1>Create a new job offer</h1>
-  </div>
-  <div>
-    <div>
-      <p>Add the informations about your job offer</p>
-      <%= simple_form_for @listing, url: employer_listings_path(@employer, @listing) do |l| %>
-      <%= l.input :title %>
-      <%= l.input :start_date %>
-      <%= l.input :end_date %>
-      <%= l.input :hours_per_week %>
-      <%= l.input :pay_per_hour %>
-      <%= l.button :submit, class: "btn btn-success socksup-primary small" %>
-      <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <h1 id="h1-create-listing">Create a new job offer</h1>
+      <div>
+        <div class="form-box">
+          <p>Add the informations about your job offer</p>
+          <div class="form-inputs">
+            <%= simple_form_for @listing, url: employer_listings_path(@employer, @listing) do |f| %>
+              <%= f.input :title, input_html: {class: "form-input"} %>
+              <%= f.input :description, input_html: {class: "form-input"} %>
+            <div class="form-input-dates">
+              <%= f.input :start_date, as: :string, required: false, input_html: {class: "form-input datepicker"} %>
+              <%= f.input :end_date, as: :string, required: false, input_html: {class: "form-input datepicker"} %>
+            </div>
+            <%= f.input :hours_per_week, input_html: {class: "form-input"} %>
+            <%= f.input :pay_per_hour, input_html: {class: "form-input"} %>
+            <%= f.button :submit, class: "btn-success socksup-primary small" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

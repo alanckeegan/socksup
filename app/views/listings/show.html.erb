@@ -1,5 +1,7 @@
 <!-- Banner picture  -->
 <div class="banner-listing-show" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url('<%= @listing.photo %>');">
+  <%= link_to '<i class="fas fa-arrow-left"></i>'.html_safe, listings_path(:query =>{:city => session[:search]['city'], :title => session[:search]['title']}), class: "back-button-position" %>
+
   <div class="banner-content-listing-show">
     <h1><%= @listing.title %></h1>
     <h2><%= @listing.employer.name %></h2>
@@ -22,7 +24,7 @@
     <% end %>
 
   <!-- Links back to results page persisting the filters added before changing to show page -->
-  <%= link_to "Back to Results", listings_path(:query =>{:city => session[:search]['city'], :title => session[:search]['title']}), class: "brand-link" %>
+
   <div class="listing-show-job-dates">
     <span style="float: left;" id="start_date"><p><i class="fas fa-walking"></i> Start Date<br> <%= @listing.start_date.strftime("%d/%m/%Y")  %></p></span>
      <span style="float: right;"id="end_date"><p>End Date <i class="fas fa-walking"></i><br> <%= @listing.end_date.strftime("%d/%m/%Y")  %></p></span>
