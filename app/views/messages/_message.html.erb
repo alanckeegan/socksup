@@ -9,7 +9,7 @@
   <% if m.user.employer.nil? %>
     <%=cl_image_tag m.user.photo, class: 'message-avatar-side'  %>
     <% else %>
-    <%= cl_image_tag m.submission.listing.employer.photo, class: 'message-avatar-side' %>
+    <%=cl_image_tag m.submission.listing.employer.photo, class: 'message-avatar-side' %>
   <% end %>
   </div>
   <div class="rel-box">
