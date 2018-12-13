@@ -2,7 +2,7 @@
   <!-- Heading is different depending on who is viewing the page. If employer, applicants name will display, if user, your responses will display -->
   <% if current_user.employer %>
   <%= link_to '<i class="fas fa-arrow-left"></i>'.html_safe, url_for(:back), class: 'response-back-button' %>
-  <h3 class="main-heading text-center"><%= @submission.user.first_name %>'s  responses!</h3>
+  <h3 class="main-heading text-center heading-margin"><%= @submission.user.first_name %>'s  responses!</h3>
 
   <% else %>
   <h3 class="main-heading text-center">Here are your responses!</h3>
