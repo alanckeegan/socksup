@@ -2,7 +2,7 @@
 <div class="banner-profile" style="background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/4RUieTItxik2c5fvx/simple-animated-geometric-background-with-squares-4k-ultra-high-definition-video-loop_hzhlwak8x_thumbnail-full01.png')">
   <div class="banner-content-profile">
     <h3><%= @employer.name%></h3>
-    <%= image_tag @employer.photo, class: "profile-picture" %>
+    <%= cl_image_tag @employer.photo, class: "profile-picture" %>
   </div>
 </div>
 
