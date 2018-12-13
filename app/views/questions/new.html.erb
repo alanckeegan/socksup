@@ -4,29 +4,36 @@
   <%= text_field_tag :question, "", {class: "form-control form-input"} %>
   <h3>Type of question</h3>
   <div class="inline" id="question_type_mc" >
-  <%= radio_button_tag(:question_type, "multiple_choice", checked = false, id: "question_type_mc_radio", class: "radio_buttons required" )  %>
-  <%= label_tag :question_type_mc_radio, "Multiple choice", class: "collection_radio_buttons" %>
+    <%= radio_button_tag(:question_type, "multiple_choice", checked = false, id: "question_type_mc_radio", class: "radio_buttons required" )  %>
+    <%= label_tag :question_type_mc_radio, "Multiple choice", class: "collection_radio_buttons" %>
   </div>
   <div class="inline" id="question_type_os" >
-  <%= radio_button_tag(:question_type, "text_field", checked = false, id: "question_type_os_radio", class: "radio_buttons required")  %>
-  <%= label_tag :question_type_os_radio, "Open answer", class: "collection_radio_buttons" %>
-</div>
+    <%= radio_button_tag(:question_type, "text_field", checked = false, id: "question_type_os_radio", class: "radio_buttons required")  %>
+    <%= label_tag :question_type_os_radio, "Open answer", class: "collection_radio_buttons" %>
+  </div>
   <div class="row">
     <div class="mc-input" id="multiple_answers" style="visibility:hidden">
       <div>
-        <%= text_field_tag :correct_answer, "Correct answer", {class: "form-control form-input mc-answer-margin-bottom-20"}%>
+        <%= text_field_tag :correct_answer, "", {class: "form-control form-input mc-answer-margin-bottom-20", placeholder: "Correct answer"}%>
       </div>
       <div>
-        <%= text_field_tag :wrong_answers0, "Wrong answer 1", {class: "form-control form-input mc-answer-margin-bottom-20"} %>
+        <%= text_field_tag :wrong_answers0, "", {class: "form-control form-input mc-answer-margin-bottom-20", placeholder: "Wrong answer"} %>
       </div>
       <div>
-        <%= text_field_tag :wrong_answers1, "Wrong answer 2", {class: "form-control form-input mc-answer-margin-bottom-20"} %>
+        <%= text_field_tag :wrong_answers1, "", {class: "form-control form-input mc-answer-margin-bottom-20", placeholder: "Wrong answer"} %>
       </div>
       <div>
-        <%= text_field_tag :wrong_answers2, "Wrong answer 3", {class: "form-control form-input mc-answer-margin-bottom-20"} %>
+        <%= text_field_tag :wrong_answers2, "", {class: "form-control form-input mc-answer-margin-bottom-20", placeholder: "Wrong answer"} %>
       </div>
     </div>
   </div>
-  <%= button_tag :submit, {class: "btn btn-success socksup-primary small"}  %>
+  <div class="submit-question-buttons">
+    <div id="submit_button_question" style="visibility: hidden">
+      <%= button_tag "Add question", {class: "btn btn-success socksup-primary small"}  %>
+    </div>
+    <div id="submit_button_question_finish" style="visibility: hidden">
+      <%= button_tag "Finish quiz", {class: "btn btn-success socksup-primary small", name: "finish quiz", value: "Finish quiz", placeholder: "Finish quiz"} %>
+    </div>
+  </div>
   <% end %>
 </div>

@@ -8,7 +8,7 @@ resources :users, only: [:show]
 
 resources :employers, only: [:show, :new, :create] do
   resources :listings, only: [:new, :create] do
-    resources :questions, only: [:new, :create]
+    resources :questions, only: [:new, :create, :show]
   end
 end
 
