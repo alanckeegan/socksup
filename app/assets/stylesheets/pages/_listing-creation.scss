@@ -26,3 +26,7 @@
   margin-bottom: 20px;
 }
 
+input[type="date"].form-control, input[type="time"].form-control, input[type="datetime-local"].form-control, input[type="month"].form-control {
+    line-height: 39px;
+    width: 149px;
+}
