@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <h1 id="h1-create-listing">Create a new job offer</h1>
+      <h1 id="h1-create-listing"></h1>
       <div>
         <div class="form-box">
-          <p>Add the informations about your job offer</p>
+          <p>Please enter the necessary information about your new job offer in the form below.</p>
           <div class="form-inputs">
             <%= simple_form_for @listing, url: employer_listings_path(@employer, @listing) do |f| %>
               <%= f.input :title, input_html: {class: "form-input"} %>
@@ -15,7 +15,7 @@
             </div>
             <%= f.input :hours_per_week, input_html: {class: "form-input"} %>
             <%= f.input :pay_per_hour, input_html: {class: "form-input"} %>
-            <%= f.button :submit, class: "btn-success socksup-primary small" %>
+            <%= f.button :submit, class: "btn-success socksup-primary small", id:"listing-enter" %>
           </div>
           <% end %>
         </div>
