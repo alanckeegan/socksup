@@ -1,17 +1,7 @@
 
 <div class="chat">
 
- <% if current_user.employer %>
- <div class="contact-information">
-  <h4>
-    <%= link_to "#{@submission.user.first_name} #{@submission.user.last_name}", user_path(@submission.user), :class => "brand-link" %>
-  </h4>
- </div>
- <% else %>
- <div class="contact-information">
- <h4><%= link_to "#{@submission.listing.employer.name}", employer_path(@submission.listing.employer) , :class => "brand-link" %></h4>
- </div>
- <% end %>
+
  <% @messages.each do |m| %>
 
  <%= render "message", m: m , user_is_messages_author: (m.user == current_user) %>
