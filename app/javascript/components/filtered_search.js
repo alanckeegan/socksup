@@ -5,7 +5,7 @@ if (input){
       let cards = document.querySelectorAll('.card');
         let titles = document.querySelectorAll('.card-title');
       for (i = 0; i < cards.length; i++) {
-        if (titles[i].innerHTML.toLowerCase().includes(input.value)) {
+        if (titles[i].innerHTML.toLowerCase().includes(input.value.toLowerCase())) {
           cards[i].style.display = "";
         } else {
           cards[i].style.display = "none";

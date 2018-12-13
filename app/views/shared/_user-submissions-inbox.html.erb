@@ -4,7 +4,7 @@
   <% if @user.submissions.count == 0 %>
   <!-- Display message if the user has not yet applied for any jobs -->
   <div class="inbox-card">
-    <p><strong>You did not apply for any jobs yet</strong></p>
+    <p><strong>You haven't applied for any jobs yet</strong></p>
     <%= link_to "Search a job now", listings_path, class: "btn btn-success socksup-primary no-apply"%>
   </div>
   <% else %>

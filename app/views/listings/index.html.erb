@@ -28,7 +28,11 @@
           <% @submissions.each do |submission| %>
           <% currentusersubmissionslistingid = submission.listing.id %>
           <% if listing.id == currentusersubmissionslistingid %>
-          <div class="ribbon"><span>APPLIED</span></div>
+              <div class="ribbon"><span>APPLIED</span></div>
+          <% elsif listing.title == submission.listing.title %>
+              <div class="ribbon-orange"><span>SUGGESTED</span></div>
+          <% else %>
+              <div></div>
           <% end %>
           <% end %>
           <div class="card-content">

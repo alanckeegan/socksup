@@ -7,9 +7,9 @@
   <% else %>
   <div class="avatar-relative">
   <% if m.user.employer.nil? %>
-    <%=cl_image_tag m.user.photo, class: 'message-avatar-side'  %>
+    <%=cl_image_tag m.user.photo, class: 'message-avatar-side', :secure => true  %>
     <% else %>
-    <%= cl_image_tag m.submission.listing.employer.photo, class: 'message-avatar-side' %>
+  <%=cl_image_tag m.submission.listing.employer.photo, class: 'message-avatar-side', :secure => true%>
   <% end %>
   </div>
   <div class="rel-box">

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_pack_tag "map" %>
@@ -12,9 +13,8 @@
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" href=<%= image_path('apple-touch-icon.png') %>>
     <link rel="apple-touch-icon" sizes="512x512" href=<%= image_path('touch-icon-iphone-lg.png') %>>
-    <link rel="apple-touch-startup-image" href= <%= image_path('touch-icon-iphone-lg.png') %>>
+    <link rel="apple-touch-startup-image" href=<%= image_path('socksup-start-screen.png') %>>
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
-    <%= favicon_link_tag %>
     <title><%= meta_title %></title>
     <meta name="description" content="<%= meta_description %>">
 

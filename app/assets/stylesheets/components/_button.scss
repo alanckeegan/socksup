@@ -50,17 +50,52 @@
       color: white;
       text-decoration: none;
     }
+    &:hover {
+      color: white;
+      opacity: 0.6;
+      text-decoration: none;
+    }
 }
 
 .chat-back-button {
   color: lightgray;
   font-size: 25px;
+  margin: 0px 20px;
   &:focus {
       color: white;
     }
     &:active {
       opacity: 0.6;
       color: gray;
+      text-decoration: none;
+    }
+    &:hover {
+      color: gray;
+      opacity: 0.6;
+      text-decoration: none;
+    }
+}
+
+.response-back-button {
+  position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 25px;
+    color: lightgray;
+    width: 35px;
+    text-align: center;
+    font-weight: lighter;
+    &:focus {
+      color: gray;
+    }
+    &:active {
+      opacity: 0.6;
+      color: gray;
+      text-decoration: none;
+    }
+    &:hover {
+      color: gray;
+      opacity: 0.6;
       text-decoration: none;
     }
 }
