@@ -8,7 +8,6 @@
   text-align: center;
 }
 
-
 #question-creation-container {
   display: flex;
   flex-direction: column;
@@ -30,3 +29,18 @@ input[type="date"].form-control, input[type="time"].form-control, input[type="da
     line-height: 39px;
     width: 149px;
 }
+
+.submit-question-buttons {
+  display: flex;
+  margin: 10px;
+  justify-content: space-around;
+
+  #submit_button_question button {
+    width: 100%;
+  }
+  #submit_button_question_finish button {
+    width: 100%;
+  }
+}
+
+
