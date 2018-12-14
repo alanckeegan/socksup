@@ -12,6 +12,8 @@ Listing.destroy_all
 Quiz.destroy_all
 User.destroy_all
 Employer.destroy_all
+Submission.destroy_all
+Response.destroy_all
 
 puts 'Creating 4 users...'
 alan = User.create!(first_name: "Alan", last_name: "Keegan", email: 'alan@socksup.co.uk', password: '123456', remote_photo_url: 'https://res.cloudinary.com/drmoc8ms2/image/upload/v1544687745/alan.jpg')
