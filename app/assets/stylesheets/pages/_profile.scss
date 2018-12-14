@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  z-index: 1;
   text-shadow: 2px 2px 5px #333;
 }
 
@@ -49,3 +50,13 @@
   right: 10px;
   text-shadow: none;
 }
+
+
+.invisible-button-refresh {
+  position: absolute;
+  width: 185px;
+  height: 80%;
+  z-index: 3;
+  margin-top: 26px;
+}
+
