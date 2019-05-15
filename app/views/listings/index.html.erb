@@ -15,8 +15,8 @@
   <div class="listings-container">
     <% if @listings.count == 0 %>
     <!-- Displays a message if the search criteria is not met -->
-    <p style="text-align: center; margin-top: 20px;"><strong>Oops, no job listings fit your search criteria.</strong> <br> Try something else ☺️</p>
-    <%= image_tag("giraffe", style: "height: 25%; width: auto;", :alt => "giraffe found nothing") %>
+    <p style="text-align: center; margin-top: 20px;"><strong>Oops, no job listings fit your search criteria!</strong> <br> Try something else ☺️</p>
+  <!--   #<%= image_tag(#{}"giraffe", style: "height: 25%; width: auto;", :alt => "giraffe found nothing") %> -->
     <% else %>
     <!-- Displays all the cards which match the search criteria -->
     <div class="row">
